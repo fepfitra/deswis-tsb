@@ -1,0 +1,29 @@
+---
+import Section from './Section.astro';
+import boro from '../assets/hero.jpg';
+---
+<Section id="sejarah" className="bg-[#F9FAFB] flex-col">
+	<h2 class="font-bold text-[30px]">Lokasi Kami</h2>
+	<div class="flex w-full gap-[32px] justify-center">
+		<div class="basis-1/2">
+	<iframe class="w-full" height="350" src="https://www.openstreetmap.org/export/embed.html?bbox=110.23723483085634%2C-7.77580888537943%2C110.24856448173524%2C-7.766464848777949&amp;layer=mapnik&amp;marker=-7.771131577922186%2C110.24289965629578" style="border: 1px solid black"></iframe>
+		</div>
+		<div class="basis-1/2 flex flex-col gap-[24px] text-[16px]">
+			<div>
+				<div class="font-bold">Alamat</div>
+				<div class="font-[#4B5563]">Jl. Taman Sendang No. 123, Desa Wisata Taman Sendang, Bandung, Jawa Barat 40391</div>
+			</div>
+			<div>
+				<a class="text-white bg-[#FF5722] px-[24px] py-[8px] my-[20px] rounded-full cursor-pointer hover:bg-orange-700 transition-colors" href="https://maps.app.goo.gl/WDFPx3M3sJVg47UR9">Ke Google Maps</a>
+			</div>
+			<div>
+				<div class="font-bold">Alamat</div>
+				<div class="font-[#4B5563]">+62 822-1234-5678</div>
+			</div>
+			<div>
+				<div class="font-bold">Email</div>
+				<div class="font-[#4B5563]">info@desawisatatamansendang.com</div>
+			</div>
+		</div>
+	</div>
+</Section>
