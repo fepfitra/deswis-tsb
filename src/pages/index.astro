@@ -10,10 +10,10 @@ import hero from '../assets/hero.jpg';
 		<ul class="flex gap-[32px] items-center">
 			<li><a href="#">Beranda</a></li>
 			<li><a href="#wisata">Wisata</a></li>
-			<li><a href="#histoy">Tentang Kami</a></li>
-			<li><a href="#galery">Galeri</a></li>
+			<li><a href="#sejarah">Tentang Kami</a></li>
+			<li><a href="#galeri">Galeri</a></li>
 			<li><a href="#testimoni">Testimoni</a></li>
-			<li class="bg-[#FF5722] px-[24px] py-[8px] rounded-[100px]"><a href="#paket">Pesan Sekarang</a></li>
+			<li class="bg-[#FF5722] px-[24px] py-[8px] rounded-[100px] hover:bg-orange-700 transition-colors text-white"><a href="#paket">Pesan Sekarang</a></li>
 		</ul>
 	</nav>
 	<div 
@@ -29,7 +29,7 @@ import hero from '../assets/hero.jpg';
 	</div>
 	<div class="h-[900px] bg-gray-500">Hero</div>
 	<div id="wisata" class="h-[900px]">Destination</div>
-	<div id="history" class="h-[900px]">History</div>
+	<div id="sejarah" class="h-[900px]">History</div>
 	<div id="paket" class="h-[900px]">Packet</div>
 	<div class="h-[900px]">Maps</div>
 	<div id="galeri" class="h-[900px]">Gallery</div>
@@ -45,13 +45,6 @@ document.addEventListener('scroll', function() {
 	const transitionPoint = heroSection.offsetHeight * 0.8; 
 	const opacity = Math.min(scrollPosition / transitionPoint, 1);
 
-  // if (scrollPosition > heroHeight) {
-  // navbar.classList.add('bg-white', 'text-black', 'shadow-md');
-  //   navbar.classList.remove('text-white');
-  // } else {
-  // navbar.classList.remove('bg-white', 'text-black', 'shadow-md');
-  //   navbar.classList.add('text-white');
-  // }
 	if (opacity > 0.5) {
 		navbar.classList.remove('text-white');
 		navbar.classList.add('text-black');
@@ -60,7 +53,6 @@ document.addEventListener('scroll', function() {
 		navbar.classList.add('text-white');
 	}
 	
-	// Add a shadow when the navbar is no longer transparent
 	if (opacity > 0.1) {
 		navbar.classList.add('shadow-lg');
 	} else {
