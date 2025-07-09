@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css'
+import Navigation from '../components/Navigation.astro'
 ---
 <!doctype html>
 <html lang="en">
@@ -12,6 +13,7 @@ import '../styles/global.css'
 	</head>
 	<body>
 		<div class="max-w-[1440px] w-full mx-auto flex flex-col items-center text-[16px]">
+			<Navigation />
 			<slot />
 		</div>
 	</body>
