@@ -1,3 +1,6 @@
+---
+import './src/styles/global.css'
+---
 <!doctype html>
 <html lang="en">
 	<head>
@@ -8,7 +11,9 @@
 		<title>Astro Basics</title>
 	</head>
 	<body>
-		<slot />
+		<div class="max-w-[1440px] w-full mx-auto flex flex-col items-center">
+			<slot />
+		</div>
 	</body>
 </html>
 

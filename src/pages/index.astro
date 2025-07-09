@@ -1,11 +1,44 @@
 ---
-import Welcome from '../components/Welcome.astro';
+import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import hero from '../assets/hero.jpg';
 ---
 
 <Layout>
-	<Welcome />
+	<nav class="fixed w-[1440px] text-white flex justify-between h-[88px] items-center px-[32px] shadow-md">
+		<div>Logo</div>
+		<ul class="flex gap-[32px] items-center">
+			<li><a href="#">Beranda</a></li>
+			<li><a href="#wisata">Wisata</a></li>
+			<li><a href="#histoy">Tentang Kami</a></li>
+			<li><a href="#galery">Galeri</a></li>
+			<li><a href="#testimoni">Testimoni</a></li>
+			<li class="bg-[#FF5722] px-[24px] py-[8px] rounded-[100px]"><a href="#paket">Pesan Sekarang</a></li>
+		</ul>
+	</nav>
+	<img id="hero" class="h-[900px] w-full" src={hero.src} alt="" fetchpriority="high" />
+	<div class="h-[900px] bg-gray-500">Hero</div>
+	<div id="wisata" class="h-[900px]">Destination</div>
+	<div id="history" class="h-[900px]">History</div>
+	<div id="paket" class="h-[900px]">Packet</div>
+	<div class="h-[900px]">Maps</div>
+	<div id="galeri" class="h-[900px]">Gallery</div>
+	<div id="testimoni" class="h-[900px]">Testimony</div>
+	<div class="h-[900px]">Footer</div>
 </Layout>
+<script>
+document.addEventListener('scroll', function() {
+  const navbar = document.querySelector('nav');
+  const heroSection = document.querySelector('#hero');
+  const scrollPosition = window.scrollY;
+  const heroHeight = heroSection.offsetHeight;
+
+  if (scrollPosition > heroHeight) {
+		navbar.classList.add('bg-white', 'text-black', 'shadow-md');
+    navbar.classList.remove('text-white');
+  } else {
+		navbar.classList.remove('bg-white', 'text-black', 'shadow-md');
+    navbar.classList.add('text-white');
+  }
+});
+</script>
