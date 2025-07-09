@@ -13,28 +13,3 @@ import Hero from '../components/Hero.astro';
 	<div id="testimoni" class="h-[900px]">Testimony</div>
 	<div class="h-[900px]">Footer</div>
 </Layout>
-<script>
-document.addEventListener('scroll', function() {
-  const navbar = document.querySelector('nav');
-  const heroSection = document.querySelector('#hero');
-	if (!heroSection) return;
-	const scrollPosition = window.scrollY;
-	const transitionPoint = heroSection.offsetHeight * 0.8; 
-	const opacity = Math.min(scrollPosition / transitionPoint, 1);
-
-	if (opacity > 0.5) {
-		navbar.classList.remove('text-white');
-		navbar.classList.add('text-black');
-	} else {
-		navbar.classList.remove('text-black');
-		navbar.classList.add('text-white');
-	}
-	
-	if (opacity > 0.1) {
-		navbar.classList.add('shadow-lg');
-	} else {
-		navbar.classList.remove('shadow-lg');
-	}
-	navbar.style.backgroundColor = `rgba(255, 255, 255, ${opacity})`;
-});
-</script>
