@@ -1,6 +1,7 @@
 ---
 import hero from '../assets/hero.jpg';
 import ObjectItem from './ObjectItem.astro'
+import Section from './Section.astro';
 let items = [
 	{
 		title: "Mata Air Sendang",
@@ -29,9 +30,9 @@ let items = [
 	},
 ]
 ---
-<div id="wisata" class="w-full px-[32px] py-[80px] flex flex-col items-center justify-center">
+<Section id="wisata">
 	<h2 class="font-bold text-[30px]">Obyek Wisata Unggulan</h2>
 	<div class="flex flex-wrap gap-[32px] justify-center">
 		{items.map((item) => <ObjectItem title={item.title} description={item.description}, image={item.image}/>)}
 	</div>
-</div>
+</Section>
