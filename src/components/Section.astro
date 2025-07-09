@@ -1,6 +1,9 @@
 ---
-const {id} = Astro.props;
+const {id, className} = Astro.props;
 ---
-<article id={id} class="w-full px-[32px] py-[80px] flex flex-col items-center justify-center">
-	<slot/>
+<article 
+  id={id} 
+  class={`w-full px-[32px] py-[80px] flex items-center justify-center gap-[48px] ${className || ''}`}
+>
+    <slot/>
 </article>
