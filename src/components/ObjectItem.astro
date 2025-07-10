@@ -1,11 +1,9 @@
 ---
-let { title, description, image } = Astro.props;
+let { title, description, thumbnail} = Astro.props;
+console.log(thumbnail);
 ---
-	<div class="sm:w-[437px] sm:min-h-[376px] w-[300px] min-h-[300px] shadow-xl rounded-2xl overflow-hidden flex flex-col">
-		<div
-			class="h-[240px] bg-cover bg-center" 
-			style={{ backgroundImage: `url(${image.src})` }}
-		></div>
+<div class="sm:w-[437px] sm:min-h-[376px] w-[300px] min-h-[300px] shadow-xl rounded-2xl overflow-hidden flex flex-col">
+		<img src={thumbnail} alt={title} class="w-full h-[240px] object-cover" />
 		<div class="grow p-[24px] flex flex-col gap-[12px]">
 		<h3 class="font-medium text-[20px]">{title}</h3>
 		<p>{description}</p>

@@ -2,6 +2,18 @@
 import hero from '../assets/hero.jpg';
 import ObjectItem from './ObjectItem.astro'
 import Section from './Section.astro';
+
+const rawPosts = Object.values(import.meta.glob('../data/articles/*.md', { eager: true }));
+const allPosts = rawPosts.map((post) => {
+		const {file, frontmatter} = post;
+		const article = file.split('/').pop().replace('.md', '');
+		return {
+		title: frontmatter.title,
+		description: frontmatter.description,
+		link: `/articles/${article}`,
+		thumbnail: frontmatter.thumbnail || hero.src,
+		}
+	});
 let items = [
 	{
 		title: "Mata Air Sendang",
@@ -33,6 +45,6 @@ let items = [
 <Section id="wisata" className="flex-col">
 	<h2 class="font-bold text-[30px]">Artikel Terbaru</h2>
 	<div class="flex flex-wrap gap-[32px] justify-center">
-		{items.map((item) => <ObjectItem title={item.title} description={item.description}, image={item.image}/>)}
+		{allPosts.map((item) => <a href={item.link}><ObjectItem title={item.title} description={item.description}, thumbnail={item.thumbnail} link={item.link}/></a>)}
 	</div>
 </Section>
