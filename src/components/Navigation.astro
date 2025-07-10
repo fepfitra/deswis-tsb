@@ -4,11 +4,11 @@
 	<div>Logo</div>
 	<button id="burger" class="md:hidden text-[32px]">☰</button>
 	<ul id="nav" class="md:flex gap-[32px] flex-col justify-center items-center md:flex-row hidden">
-		<li><a href="#">Beranda</a></li>
-		<li><a href="#wisata">Wisata</a></li>
-		<li><a href="#sejarah">Tentang Kami</a></li>
-		<li><a href="#galeri">Galeri</a></li>
-		<li><a href="#testimoni">Testimoni</a></li>
+		<li><a href="/#">Beranda</a></li>
+		<li><a href="/#wisata">Wisata</a></li>
+		<li><a href="/#sejarah">Tentang Kami</a></li>
+		<li><a href="/#galeri">Galeri</a></li>
+		<li><a href="/#testimoni">Testimoni</a></li>
 		<li class="bg-[#FF5722] px-[24px] py-[8px] rounded-[100px] hover:bg-orange-700 transition-colors text-white"><a href="#paket">Pesan Sekarang</a></li>
 	</ul>
 </nav>
@@ -25,11 +25,40 @@ burgerButton.addEventListener('click', function() {
 		nav.classList.remove('flex');
 	}
 });
-
-document.addEventListener('scroll', function() {
+window.onload = function() {
   const navbar = document.querySelector('nav');
   const heroSection = document.querySelector('#hero');
-	if (!heroSection) return;
+	if (!heroSection) {
+		navbar.style.backgroundColor = `rgba(255, 255, 255, 255)`;
+		navbar.classList.remove('text-white');
+		navbar.classList.add('text-black');
+	}
+
+	const scrollPosition = window.scrollY;
+	const transitionPoint = heroSection.offsetHeight * 0.8; 
+	const opacity = Math.min(scrollPosition / transitionPoint, 1);
+	if (opacity > 0.5) {
+		navbar.classList.remove('text-white');
+		navbar.classList.add('text-black');
+	} else {
+		navbar.classList.remove('text-black');
+		navbar.classList.add('text-white');
+	}
+	
+	if (opacity > 0.1) {
+		navbar.classList.add('shadow-lg');
+	} else {
+		navbar.classList.remove('shadow-lg');
+	}
+	navbar.style.backgroundColor = `rgba(255, 255, 255, ${opacity})`;
+}
+
+window.onscroll = function() {
+  const navbar = document.querySelector('nav');
+  const heroSection = document.querySelector('#hero');
+	if (!heroSection) {
+		return;
+	}
 	const scrollPosition = window.scrollY;
 	const transitionPoint = heroSection.offsetHeight * 0.8; 
 	const opacity = Math.min(scrollPosition / transitionPoint, 1);
@@ -48,5 +77,5 @@ document.addEventListener('scroll', function() {
 		navbar.classList.remove('shadow-lg');
 	}
 	navbar.style.backgroundColor = `rgba(255, 255, 255, ${opacity})`;
-});
+}
 </script>
