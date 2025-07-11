@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Prose from '../../layouts/Prose.astro';
 export function getStaticPaths() {
 	const allPosts = Object.values(import.meta.glob('../../data/articles/*.md', { eager: true }));
 	return allPosts.map((post) => {
@@ -26,5 +27,10 @@ const { frontmatter, Content } = Astro.props;
 			<a class="bg-[#FF5722] px-[24px] py-[8px] my-[10px] text-[14px] rounded-full cursor-pointer hover:bg-orange-700 transition-colors" href="">by {frontmatter.author}</a>
 		</div>
 	</div>
-	<Content/>
+	<div class="flex flex-row p-[32px] justify-center">
+		<Prose>
+			<Content/>
+		</Prose>
+		<div>Articles</div>
+	</div>
 </Layout>
