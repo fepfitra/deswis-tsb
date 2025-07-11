@@ -27,7 +27,7 @@ const { frontmatter, Content } = Astro.props;
 			<a class="bg-[#FF5722] px-[24px] py-[8px] my-[10px] text-[14px] rounded-full cursor-pointer hover:bg-orange-700 transition-colors" href="">by {frontmatter.author}</a>
 		</div>
 	</div>
-	<div class="flex flex-row p-[32px] justify-center">
+	<div class="flex md:flex-row flex-col gap-[32px] p-[32px] justify-center">
 		<Prose>
 			<Content/>
 		</Prose>
