@@ -2,10 +2,10 @@
 import Section from './Section.astro';
 import boro from '../assets/hero.jpg';
 ---
-<Section id="sejarah" className="bg-[#F9FAFB]">
+<Section id="sejarah" className="bg-[#F9FAFB] shadow-xl">
 	<div class="flex md:flex-row flex-col gap-[32px] justify-center w-full ">
 		<h2 class="md:hidden block font-bold text-[30px] text-center">Kisah Desa Kami</h2>
-		<div class="md:h-[200px] min-h-[500px] bg-cover bg-center rounded-2xl basis-1/2" style={{ backgroundImage: `url(${boro.src})` }}></div>
+		<div class="md:h-[200px] min-h-[500px] bg-cover bg-center rounded-2xl basis-1/2 hover:shadow-2xl shadow-xl hover:scale-[1.02] transition-all" style={{ backgroundImage: `url(${boro.src})` }}></div>
 		<div class="basis-1/2 flex flex-col gap-[16px] justify-center">
 			<h2 class="md:block hidden font-bold text-[30px]">Kisah Desa Kami</h2>
 			<p>

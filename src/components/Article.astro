@@ -42,7 +42,7 @@ let items = [
 	},
 ]
 ---
-<Section id="artikel" className="flex-col">
+<Section id="artikel" className="flex-col bg-[#F9FAFB] shadow-xl">
 	<h2 class="font-bold text-[30px]">Artikel Terbaru</h2>
 	<div class="flex flex-wrap gap-[32px] justify-center">
 		{allPosts.map((item) => <a href={item.link}><ObjectItem title={item.title} description={item.description}, thumbnail={item.thumbnail} link={item.link}/></a>)}

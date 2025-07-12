@@ -2,11 +2,11 @@
 import Section from './Section.astro';
 import boro from '../assets/hero.jpg';
 ---
-<Section id="maps" className="bg-[#F9FAFB] flex-col">
+<Section id="maps" className="bg-[#F9FAFB] flex-col shadow-xl">
 	<h2 class="font-bold text-[30px]">Lokasi Kami</h2>
 	<div class="flex w-full gap-[32px] justify-center md:flex-row flex-col">
 		<div class="basis-1/2">
-			<iframe class="w-full" height="350" src="https://www.openstreetmap.org/export/embed.html?bbox=110.23723483085634%2C-7.77580888537943%2C110.24856448173524%2C-7.766464848777949&amp;layer=mapnik&amp;marker=-7.771131577922186%2C110.24289965629578" style="border: 1px solid black"></iframe>
+			<iframe class="w-full hover:shadow-2xl hover:scale-[1.02] transition-all" height="350" src="https://www.openstreetmap.org/export/embed.html?bbox=110.23723483085634%2C-7.77580888537943%2C110.24856448173524%2C-7.766464848777949&amp;layer=mapnik&amp;marker=-7.771131577922186%2C110.24289965629578" style="border: 1px solid black"></iframe>
 		</div>
 		<div class="basis-1/2 flex flex-col gap-[24px] text-[16px]">
 			<div>
@@ -14,7 +14,7 @@ import boro from '../assets/hero.jpg';
 				<div class="font-[#4B5563]">Jl. Taman Sendang No. 123, Desa Wisata Taman Sendang, Bandung, Jawa Barat 40391</div>
 			</div>
 			<div>
-				<a class="text-white bg-primary px-[24px] py-[8px] my-[20px] rounded-full cursor-pointer hover:bg-hover transition-colors" href="https://maps.app.goo.gl/WDFPx3M3sJVg47UR9">Ke Google Maps</a>
+				<a class="text-white bg-primary px-[24px] py-[8px] my-[20px] rounded-full cursor-pointer hover:bg-hover transition-colors hover:shadow-2xl hover:scale-[1.02] transition-all" href="https://maps.app.goo.gl/WDFPx3M3sJVg47UR9">Ke Google Maps</a>
 			</div>
 			<div>
 				<div class="font-bold">Alamat</div>
