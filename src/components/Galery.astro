@@ -2,16 +2,38 @@
 import Section from './Section.astro';
 import boro from '../assets/hero.jpg';
 ---
+
+<!-- <Section id="wisata" className=""> -->
+<!-- 	<div class="flex flex-row rounded-2xl w-full shadow-xl text-center overflow-hidden"> -->
+<!-- 		<div class="flex items-center justify-center shadow-xl bg-primary text-white"> -->
+<!-- 			<h2 class="font-bold text-[30px] m-auto">Potensi Unggulan</h2> -->
+<!-- 		</div> -->
+<!-- 		<div class="flex w-full overflow-x-scroll p-[64px]"> -->
+<!-- 			<div class="flex  gap-[32px] justify-center"> -->
+<!-- 				{items.map((item) => <ObjectItem title={item.title} description={item.description}, thumbnail={item.thumbnail}/>)} -->
+<!-- 			</div> -->
+<!-- 		</div> -->
+<!-- 	</div> -->
+<!-- </Section> -->
 <Section id="galeri" className="flex-col gap-[48px]">
-	<h2 class="font-bold text-[30px]">Galeri Foto</h2>
-	<div class="flex flex-wrap gap-[16px] justify-center">
-		<div class="w-[332px] h-[200px] bg-cover bg-center rounded-2xl hover:shadow-2xl hover:scale-[1.02] transition-all" style={{ backgroundImage: `url(${boro.src})` }}></div>
-		<div class="w-[332px] h-[200px] bg-cover bg-center rounded-2xl hover:shadow-2xl hover:scale-[1.02] transition-all" style={{ backgroundImage: `url(${boro.src})` }}></div>
-		<div class="w-[332px] h-[200px] bg-cover bg-center rounded-2xl hover:shadow-2xl hover:scale-[1.02] transition-all" style={{ backgroundImage: `url(${boro.src})` }}></div>
-		<div class="w-[332px] h-[200px] bg-cover bg-center rounded-2xl hover:shadow-2xl hover:scale-[1.02] transition-all" style={{ backgroundImage: `url(${boro.src})` }}></div>
-		<div class="w-[332px] h-[200px] bg-cover bg-center rounded-2xl hover:shadow-2xl hover:scale-[1.02] transition-all" style={{ backgroundImage: `url(${boro.src})` }}></div>
-		<div class="w-[332px] h-[200px] bg-cover bg-center rounded-2xl hover:shadow-2xl hover:scale-[1.02] transition-all" style={{ backgroundImage: `url(${boro.src})` }}></div>
-		<div class="w-[332px] h-[200px] bg-cover bg-center rounded-2xl hover:shadow-2xl hover:scale-[1.02] transition-all" style={{ backgroundImage: `url(${boro.src})` }}></div>
-		<div class="w-[332px] h-[200px] bg-cover bg-center rounded-2xl hover:shadow-2xl hover:scale-[1.02] transition-all" style={{ backgroundImage: `url(${boro.src})` }}></div>
+
+	<div class="flex flex-col rounded-2xl w-full shadow-xl text-center overflow-hidden">
+		<div class="flex items-center justify-center">
+			<h2 class="font-bold text-[30px]">Galeri Foto</h2>
+		</div>
+		<div class="flex w-full animate-scroll-horizontal p-[64px]">
+			<div class="flex gap-[32px] justify-center">
+				<div class="flex flexno-wrap gap-[16px] justify-center">
+					<div class="w-[664px] h-[400px] bg-cover bg-center rounded-2xl hover:shadow-2xl hover:scale-[1.02] transition-all" style={{ backgroundImage: `url(${boro.src})` }}></div>
+					<div class="w-[664px] h-[400px] bg-cover bg-center rounded-2xl hover:shadow-2xl hover:scale-[1.02] transition-all" style={{ backgroundImage: `url(${boro.src})` }}></div>
+					<div class="w-[664px] h-[400px] bg-cover bg-center rounded-2xl hover:shadow-2xl hover:scale-[1.02] transition-all" style={{ backgroundImage: `url(${boro.src})` }}></div>
+					<div class="w-[664px] h-[400px] bg-cover bg-center rounded-2xl hover:shadow-2xl hover:scale-[1.02] transition-all" style={{ backgroundImage: `url(${boro.src})` }}></div>
+					<div class="w-[664px] h-[400px] bg-cover bg-center rounded-2xl hover:shadow-2xl hover:scale-[1.02] transition-all" style={{ backgroundImage: `url(${boro.src})` }}></div>
+					<div class="w-[664px] h-[400px] bg-cover bg-center rounded-2xl hover:shadow-2xl hover:scale-[1.02] transition-all" style={{ backgroundImage: `url(${boro.src})` }}></div>
+					<div class="w-[664px] h-[400px] bg-cover bg-center rounded-2xl hover:shadow-2xl hover:scale-[1.02] transition-all" style={{ backgroundImage: `url(${boro.src})` }}></div>
+					<div class="w-[664px] h-[400px] bg-cover bg-center rounded-2xl hover:shadow-2xl hover:scale-[1.02] transition-all" style={{ backgroundImage: `url(${boro.src})` }}></div>
+				</div>
+			</div>
+		</div>
 	</div>
 </Section>

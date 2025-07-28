@@ -1,7 +1,25 @@
 @import "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @plugin '@tailwindcss/typography';
 @theme {
   --font-sans: 'Inter', 'sans-serif';
 	--color-primary: #27AE60;
 	--color-hover: #219150
+}
+
+@keyframes scroll-horizontal {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-100%); /* Or a calculated value */
+	}
+}
+
+.animate-scroll-horizontal {
+	animation: scroll-horizontal 20s linear infinite; /* Adjust duration as needed */
 }
