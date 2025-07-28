@@ -1,0 +1,63 @@
+---
+import ObjectItem from './ObjectItem.astro'
+import Section from './Section.astro';
+let hero = '/content/boro.jpg';
+let items = [
+	{
+		title: "Mata Air Sendang",
+		description: "Saksikan keindahan alam yang memukau di sekitar Taman Sendang Bandung",
+		thumbnail: hero
+	},
+	{
+		title: "Joglo",
+		description: "Nikmati suasana tradisional yang kental di Joglo Taman Sendang Bandung",
+		thumbnail: hero
+	},
+	{
+		title: "Holtikultura / Buah Kelengkeng",
+		description: "Jelajahi keindahan tanaman holtikultura dan nikmati buah kelengkeng segar",
+		thumbnail: hero
+	},
+	{
+		title: "Peternakan",
+		description: "Pelajari tentang peternakan lokal dan interaksi dengan hewan ternak",
+		thumbnail: hero
+	},
+	{
+		title: "Perikanan",
+		description: "Temukan keindahan perikanan di Taman Sendang Bandung",
+		thumbnail: hero
+	},
+	{
+		title: "Thek band",
+		description: "Nikmati penampilan musik tradisional yang menghibur di Taman Sendang Bandung",
+		thumbnail: hero
+	},
+	{
+		title: "Kuliner",
+		description: "Cicipi berbagai hidangan lezat khas Taman Sendang Bandung",
+		thumbnail: hero
+	},
+	{
+		title: "Line Dance",
+		description: "Ikuti keseruan Line Dance bersama komunitas lokal",
+		thumbnail: hero
+	},
+	{
+		title: "Empu Keris (Ki Empu Sungkowo Harumbrodjo)",
+		description: "Pelajari seni pembuatan keris dari Ki Empu Sungkowo Harumbrodjo yang terkenal",
+		thumbnail: hero
+	},
+	{
+		title: "Pasar Tradisional",
+		description: "Rasakan suasana pasar tradisional yang ramai dan beragam produk lokal",
+		thumbnail: hero
+	},
+]
+---
+<Section id="wisata" className="flex-col">
+	<h2 class="font-bold text-[30px]">Potensi Unggulan</h2>
+	<div class="flex flex-wrap gap-[32px] justify-center">
+		{items.map((item) => <ObjectItem title={item.title} description={item.description}, thumbnail={item.thumbnail}/>)}
+	</div>
+</Section>
