@@ -55,9 +55,15 @@ let items = [
 	},
 ]
 ---
-<Section id="wisata" className="flex-col">
-	<h2 class="font-bold text-[30px]">Potensi Unggulan</h2>
-	<div class="flex flex-wrap gap-[32px] justify-center">
-		{items.map((item) => <ObjectItem title={item.title} description={item.description}, thumbnail={item.thumbnail}/>)}
+<Section id="wisata" className="">
+	<div class="flex flex-row rounded-2xl w-full shadow-xl text-center overflow-hidden">
+		<div class="flex items-center justify-center shadow-xl bg-primary text-white">
+			<h2 class="font-bold text-[30px] m-auto">Potensi Unggulan</h2>
+		</div>
+		<div class="flex w-full overflow-x-scroll p-[64px]">
+			<div class="flex  gap-[32px] justify-center">
+				{items.map((item) => <ObjectItem title={item.title} description={item.description}, thumbnail={item.thumbnail}/>)}
+			</div>
+		</div>
 	</div>
 </Section>
