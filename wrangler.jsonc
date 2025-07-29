@@ -4,11 +4,4 @@
   "assets": {
     "directory": "./dist"
   },
-	"ai": {
-		"binding": "AI"
-	},
-	"observability": {
-    "enabled": true,
-    "head_sampling_rate": 1
-  }
 }
