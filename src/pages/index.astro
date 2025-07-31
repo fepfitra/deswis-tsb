@@ -9,10 +9,12 @@ import Maps from '../components/Maps.astro';
 import Potential from '../components/Potential.astro';
 import Packet from '../components/Packet.astro';
 import Testimoni from '../components/Testimoni.astro';
+import { Chat } from '../components/Chat.tsx';
 ---
 
 <Layout>
 	<Hero />
+	<Chat client:load/>
 	<Potential />
 	<History />
 	<Packet />
