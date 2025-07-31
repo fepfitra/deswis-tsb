@@ -2,29 +2,48 @@
 import Section from './Section.astro';
 
 const packets = [
-	"Meeting", "Wedding", "Gathering", "Outbound", "Parenting", "Camping"
+    "Meeting", "Wedding", "Gathering", "Outbound", "Parenting", "Camping"
 ]
 ---
-<Section id="paket" className="">
-	<div class="flex flex-col rounded-2xl w-full shadow-xl text-center overflow-hidden">
-		<div class="flex items-center justify-center">
-			<h2 class="font-bold text-[30px]">Paket Wisata</h2>
-		</div>
-		<div class="flex w-full overflow-x-scroll p-[64px]">
-			<div class="flex flex-nowrap gap-[32px] justify-center">
-				{packets.map((item) => <div class="w-[350px] h-[394px] shadow-xl rounded-2xl p-[32px] flex flex-col gap-[16px] hover:shadow-2xl hover:scale-[1.02] transition-all">
-					<h3 class="font-bold text-[20px]">{item}</h3>
-					<h4 class="font-bold text-primary text-[30px]">Rp250.000</h4>
-					<ul class="flex flex-col gap-[16px] text-[16px]">
-						<li>Guide Lokal</li>
-						<li>Guide Lokal</li>
-						<li>Guide Lokal</li>
-						<li>Guide Lokal</li>
-					</ul>
-					<a class="text-center text-white bg-primary px-[24px] py-[8px] my-[20px] rounded-full cursor-pointer hover:bg-hover transition-colors hover:shadow-2xl hover:scale-[1.02] transition-all" href="#paket">Pesan Sekarang</a>
-				</div>
-				)}
-			</div>
-		</div>
-	</div>
+<Section id="paket" className="py-12 md:py-20">
+    <div class="flex flex-col w-full text-center">
+        <div class="mb-8 md:mb-12">
+            <h2 class="font-bold text-2xl md:text-3xl">Paket Wisata</h2>
+        </div>
+        
+        <div class="w-full lg:overflow-x-auto simple-scrollbar">
+            <div class="flex flex-col lg:flex-row items-center gap-8 px-4">
+                {packets.map((item) => (
+                    <div class="w-full max-w-sm lg:w-[350px] lg:flex-shrink-0 h-[394px] shadow-xl rounded-2xl p-8 flex flex-col gap-4 hover:shadow-2xl hover:scale-[1.02] transition-all m-[32px]">
+                        <h3 class="font-bold text-xl">{item}</h3>
+                        <h4 class="font-bold text-primary text-3xl">Rp250.000</h4>
+                        <ul class="flex flex-col gap-4 text-base text-left">
+                            <li class="flex items-center gap-2">✔ Guide Lokal</li>
+                            <li class="flex items-center gap-2">✔ Makanan & Minuman</li>
+                            <li class="flex items-center gap-2">✔ Dokumentasi</li>
+                            <li class="flex items-center gap-2">✔ Aktivitas Seru</li>
+                        </ul>
+                        <a class="text-center text-white bg-primary px-6 py-2 mt-auto rounded-full cursor-pointer hover:bg-hover transition-colors" href="#paket">Pesan Sekarang</a>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </div>
 </Section>
+
+<style>
+.simple-scrollbar::-webkit-scrollbar {
+    height: 8px;
+}
+.simple-scrollbar::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+.simple-scrollbar::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+}
+.simple-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #aaa;
+}
+</style>
