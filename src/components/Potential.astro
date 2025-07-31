@@ -1,59 +1,17 @@
 ---
-import ObjectItem from './ObjectItem.astro'
 import Section from './Section.astro';
-let hero = '/content/boro.jpg';
 let items = [
-	{
-		title: "Mata Air Sendang",
-		description: "Saksikan keindahan alam yang memukau di sekitar Taman Sendang Bandung",
-		thumbnail: hero
-	},
-	{
-		title: "Joglo",
-		description: "Nikmati suasana tradisional yang kental di Joglo Taman Sendang Bandung",
-		thumbnail: hero
-	},
-	{
-		title: "Holtikultura / Buah Kelengkeng",
-		description: "Jelajahi keindahan tanaman holtikultura dan nikmati buah kelengkeng segar",
-		thumbnail: hero
-	},
-	{
-		title: "Peternakan",
-		description: "Pelajari tentang peternakan lokal dan interaksi dengan hewan ternak",
-		thumbnail: hero
-	},
-	{
-		title: "Perikanan",
-		description: "Temukan keindahan perikanan di Taman Sendang Bandung",
-		thumbnail: hero
-	},
-	{
-		title: "Thek band",
-		description: "Nikmati penampilan musik tradisional yang menghibur di Taman Sendang Bandung",
-		thumbnail: hero
-	},
-	{
-		title: "Kuliner",
-		description: "Cicipi berbagai hidangan lezat khas Taman Sendang Bandung",
-		thumbnail: hero
-	},
-	{
-		title: "Line Dance",
-		description: "Ikuti keseruan Line Dance bersama komunitas lokal",
-		thumbnail: hero
-	},
-	{
-		title: "Empu Keris (Ki Empu Sungkowo Harumbrodjo)",
-		description: "Pelajari seni pembuatan keris dari Ki Empu Sungkowo Harumbrodjo yang terkenal",
-		thumbnail: hero
-	},
-	{
-		title: "Pasar Tradisional",
-		description: "Rasakan suasana pasar tradisional yang ramai dan beragam produk lokal",
-		thumbnail: hero
-	},
-]
+    { title: "Mata Air Sendang", description: "Saksikan keindahan alam yang memukau di sekitar Taman Sendang Bandung.", icon: "💧" },
+    { title: "Joglo", description: "Nikmati suasana tradisional yang kental di Joglo Taman Sendang Bandung.", icon: "🛖" },
+    { title: "Holtikultura / Buah Kelengkeng", description: "Jelajahi keindahan tanaman holtikultura dan nikmati buah kelengkeng segar.", icon: "🌿" },
+    { title: "Peternakan", description: "Pelajari tentang peternakan lokal dan interaksi dengan hewan ternak.", icon: "🐄" },
+    { title: "Perikanan", description: "Temukan keindahan perikanan di Taman Sendang Bandung.", icon: "🐟" },
+    { title: "Thek band", description: "Nikmati penampilan musik tradisional yang menghibur di Taman Sendang Bandung.", icon: "🎶" },
+    { title: "Kuliner", description: "Cicipi berbagai hidangan lezat khas Taman Sendang Bandung.", icon: "🍴" },
+    { title: "Line Dance", description: "Ikuti keseruan Line Dance bersama komunitas lokal.", icon: "💃" },
+    { title: "Empu Keris", description: "Pelajari seni pembuatan keris dari Ki Empu Sungkowo Harumbrodjo.", icon: "🗡️" },
+    { title: "Pasar Tradisional", description: "Rasakan suasana pasar tradisional yang ramai dan beragam produk lokal.", icon: "🛍️" },
+];
 ---
 <Section id="wisata" className="">
 	<div class="flex flex-row rounded-2xl w-full shadow-xl text-center overflow-hidden">
@@ -62,7 +20,13 @@ let items = [
 		</div>
 		<div class="flex w-full overflow-x-scroll p-[64px]">
 			<div class="flex  gap-[32px] justify-center">
-				{items.map((item) => <ObjectItem title={item.title} description={item.description}, thumbnail={item.thumbnail}/>)}
+				{items.map((item) => <>
+					<div class="flex flex-col items-center text-center p-4 rounded-lg shadow-md bg-white w-60 h-full flex-shrink-0">
+							<div class="text-6xl mb-4">{item.icon}</div>
+							<h3 class="font-bold text-lg mb-2">{item.title}</h3>
+							<p class="text-sm text-gray-600">{item.description}</p>
+					</div>
+				</>)}
 			</div>
 		</div>
 	</div>
