@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from 'preact/hooks';
 export function Chat() {
 	const [messages, setMessages] = useState([
 		{ id: 1, text: 'Apa itu sendang bandung?', sender: 'user' },
-		{ id: 2, text: 'Sendang Bandung adalah sebuah desa wisata yang terletak di Desa Karang, Kecamatan Moyudan, Kabupaten Sleman, Daerah Istimewa Yogyakarta. Desa wisata ini memiliki potensi besar untuk mengembangkan program yang melibatkan masyarakat lokal, seperti pertunjukan seni budaya, homestay dengan penduduk desa, atau pasar produk-produk UMKM lokal. Selain itu, Sendang Bandung juga memiliki keistimewaan dengan adanya sumber mata air alami yang dahulunya dimanfaatkan sebagai pembangkit tenaga listrik yang mampu memenuhi kebutuhan listrik satu desa. Kawasan ini memiliki kekayaan sumber daya alam, nilai historis, dan potensi budaya yang kuat, sehingga menjadikan Sendang Bandung sebagai destinasi wisata yang menarik dan edukatif. ', sender: 'bot' },
+		{ id: 2, text: 'Sendang Bandung adalah sebuah desa wisata yang terletak di Desa Karang, Kecamatan Moyudan, Kabupaten Sleman, Daerah Istimewa Yogyakarta. Desa wisata ini memiliki potensi besar untuk mengembangkan program yang melibatkan masyarakat lokal, seperti pertunjukan seni budaya, homestay dengan penduduk desa, atau pasar produk-produk UMKM lokal.', sender: 'bot' },
 	]);
 	const [inputValue, setInputValue] = useState('');
 
@@ -55,17 +55,6 @@ export function Chat() {
 				};
 				setMessages(prevMessages => [...prevMessages, newBotMessage]);
 			});
-		// })
-		// curl https://api.sendangbandung.com/chat -d '{"query": "apa itu sendang bandung?"}'
-
-		// setTimeout(() => {
-		// 	const newBotMessage = {
-		// 		id: Date.now() + 1,
-		// 		text: `${query}`,
-		// 		sender: 'bot',
-		// 	};
-		// 	setMessages(prevMessages => [...prevMessages, newBotMessage]);
-		// }, 1000);
 	};
 
 	const handleKeyPress = (event) => {
@@ -77,7 +66,7 @@ export function Chat() {
 
 	return (
 		<div class="flex flex-col shadow-xl gap-[24px] rounded-2xl px-[32px] py-[80px] my-[64px] bg-white">
-			<div id="chat" ref={chatContainerRef} class="h-[400px] overflow-y-scroll p-[24px]">
+			<div id="chat" ref={chatContainerRef} class="h-[70vh] overflow-y-scroll p-[24px]">
 				{/* Map over the messages array to render each message */}
 				{messages.map((msg) => (
 					<div key={msg.id} class="flex flex-row mb-4">
@@ -117,3 +106,4 @@ export function Chat() {
 		</div>
 	);
 }
+
