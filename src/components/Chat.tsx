@@ -76,7 +76,7 @@ export function Chat() {
 	};
 
 	return (
-		<div class="flex flex-col shadow-xl gap-[24px] rounded-2xl p-[64px] pb-[32px]">
+		<div class="flex flex-col shadow-xl gap-[24px] rounded-2xl px-[32px] py-[80px] my-[64px] bg-white">
 			<div id="chat" ref={chatContainerRef} class="h-[400px] overflow-y-scroll p-[24px]">
 				{/* Map over the messages array to render each message */}
 				{messages.map((msg) => (
