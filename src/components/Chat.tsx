@@ -66,6 +66,9 @@ export function Chat() {
 
 	return (
 		<div class="flex flex-col shadow-xl gap-[24px] rounded-2xl px-[32px] py-[80px] my-[64px] bg-white">
+			<div class="flex items-center justify-center">
+				<h2 class="font-bold text-[30px]">Tanya Bot</h2>
+			</div>
 			<div id="chat" ref={chatContainerRef} class="h-[70vh] overflow-y-scroll p-[24px]">
 				{/* Map over the messages array to render each message */}
 				{messages.map((msg) => (
