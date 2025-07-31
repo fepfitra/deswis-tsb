@@ -1,4 +1,5 @@
 ---
+// Your script section remains the same
 import Section from './Section.astro';
 let items = [
     { title: "Mata Air Sendang", description: "Saksikan keindahan alam yang memukau di sekitar Taman Sendang Bandung.", icon: "💧" },
@@ -13,21 +14,40 @@ let items = [
     { title: "Pasar Tradisional", description: "Rasakan suasana pasar tradisional yang ramai dan beragam produk lokal.", icon: "🛍️" },
 ];
 ---
-<Section id="wisata" className="">
-	<div class="flex flex-row rounded-2xl w-full shadow-xl text-center overflow-hidden">
-		<div class="flex items-center justify-center shadow-xl bg-primary text-white">
-			<h2 class="font-bold text-[30px] m-auto">Potensi Unggulan</h2>
-		</div>
-		<div class="flex w-full overflow-x-scroll p-[64px]">
-			<div class="flex  gap-[32px] justify-center">
-				{items.map((item) => <>
-					<div class="flex flex-col items-center text-center p-4 rounded-lg shadow-md bg-white w-60 h-full flex-shrink-0">
-							<div class="text-6xl mb-4">{item.icon}</div>
-							<h3 class="font-bold text-lg mb-2">{item.title}</h3>
-							<p class="text-sm text-gray-600">{item.description}</p>
-					</div>
-				</>)}
-			</div>
-		</div>
-	</div>
+<Section id="wisata" className="bg-gray-50 py-12 md:py-20">
+    <div class="flex flex-col lg:flex-row rounded-2xl w-full shadow-xl text-center overflow-hidden">
+        
+        <div class="flex items-center justify-center p-8 lg:w-1/4 bg-primary text-white flex-shrink-0">
+            <h2 class="font-bold text-2xl md:text-3xl">Potensi Unggulan</h2>
+        </div>
+
+        <div class="w-full lg:overflow-x-auto simple-scrollbar p-6 lg:p-12">
+            <div class="flex flex-col lg:flex-row gap-6 md:gap-8">
+                {items.map((item) => (
+                    <div class="flex flex-col items-center text-center p-6 rounded-lg shadow-md bg-white w-full lg:w-60 h-full lg:flex-shrink-0">
+                        <div class="text-5xl md:text-6xl mb-4">{item.icon}</div>
+                        <h3 class="font-bold text-lg mb-2">{item.title}</h3>
+                        <p class="text-sm text-gray-600">{item.description}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </div>
 </Section>
+
+<style>
+.simple-scrollbar::-webkit-scrollbar {
+    height: 8px;
+}
+.simple-scrollbar::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+.simple-scrollbar::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+}
+.simple-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #aaa;
+}
+</style>
