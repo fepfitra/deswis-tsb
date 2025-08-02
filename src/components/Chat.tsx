@@ -4,9 +4,10 @@ import { useState, useRef, useEffect } from 'preact/hooks';
 export function Chat() {
 	const [messages, setMessages] = useState([
 		{ id: 1, text: 'Apa itu sendang bandung?', sender: 'user' },
-		{ id: 2, text: 'Sendang Bandung adalah sebuah desa wisata yang terletak di Desa Karang, Kecamatan Moyudan, Kabupaten Sleman, Daerah Istimewa Yogyakarta. Desa wisata ini memiliki potensi besar untuk mengembangkan program yang melibatkan masyarakat lokal, seperti pertunjukan seni budaya, homestay dengan penduduk desa, atau pasar produk-produk UMKM lokal.', sender: 'bot' },
+		{ id: 2, text: 'Sendang Bandung adalah sebuah desa wisata yang terletak di Desa Karang, Kecamatan Moyudan, Kabupaten Sleman, Daerah Istimewa Yogyakarta...', sender: 'bot' },
 	]);
 	const [inputValue, setInputValue] = useState('');
+	const [isLoading, setIsLoading] = useState(false); // 1. Add loading state
 
 	const chatContainerRef = useRef(null);
 
@@ -14,11 +15,11 @@ export function Chat() {
 		if (chatContainerRef.current) {
 			chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
 		}
-	}, [messages]);
+	}, [messages, isLoading]); // Scroll when loading starts too
 
 	const handleSubmit = () => {
 		const query = inputValue.trim();
-		if (query === '') return;
+		if (query === '' || isLoading) return; // Prevent sending while loading
 
 		const newUserMessage = {
 			id: Date.now(),
@@ -26,8 +27,8 @@ export function Chat() {
 			sender: 'user',
 		};
 		setMessages(prevMessages => [...prevMessages, newUserMessage]);
-
 		setInputValue('');
+		setIsLoading(true); // 2. Set loading to true before fetching
 
 		fetch('https://api.sendangbandung.com/chat', {
 			method: 'POST',
@@ -38,7 +39,6 @@ export function Chat() {
 		})
 			.then(response => response.json())
 			.then(data => {
-				console.log('Response from server:', data);
 				const newBotMessage = {
 					id: Date.now() + 1,
 					text: data.result.response || 'Maaf, saya tidak mengerti pertanyaan Anda.',
@@ -54,6 +54,9 @@ export function Chat() {
 					sender: 'bot',
 				};
 				setMessages(prevMessages => [...prevMessages, newBotMessage]);
+			})
+			.finally(() => {
+				setIsLoading(false); // 3. Set loading to false after fetch completes
 			});
 	};
 
@@ -70,38 +73,41 @@ export function Chat() {
 				<h2 class="font-bold text-[30px]">Tanya Bot</h2>
 			</div>
 			<div id="chat" ref={chatContainerRef} class="h-[70vh] overflow-y-scroll p-[24px]">
-				{/* Map over the messages array to render each message */}
 				{messages.map((msg) => (
-					<div key={msg.id} class="flex flex-row mb-4">
-						{msg.sender === 'user' ? (
-							<>
-								<div class="grow"></div>
-								<p class="text-right shadow-xl rounded-2xl p-[16px] flex-none bg-primary text-white max-w-[75%]">{msg.text}</p>
-							</>
-						) : (
-							<>
-								<p class="text-left shadow-xl rounded-2xl p-[16px] flex-none bg-gray-200 text-black max-w-[75%]">{msg.text}</p>
-								<div class="grow"></div>
-							</>
-						)}
+					<div key={msg.id} class={`flex flex-row mb-4 ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
+						<p class={`shadow-xl rounded-2xl p-[16px] flex-none max-w-[75%] ${msg.sender === 'user' ? 'bg-primary text-white' : 'bg-gray-200 text-black'}`}>
+							{msg.text}
+						</p>
 					</div>
 				))}
+
+				{/* 4. Render loading indicator */}
+				{isLoading && (
+					<div class="flex flex-row mb-4 justify-start">
+						<div class="shadow-xl rounded-2xl p-[16px] flex-none bg-gray-200 text-black">
+							<div class="flex items-center justify-center gap-2">
+								<span class="w-2 h-2 bg-gray-500 rounded-full animate-pulse [animation-delay:-0.3s]"></span>
+								<span class="w-2 h-2 bg-gray-500 rounded-full animate-pulse [animation-delay:-0.15s]"></span>
+								<span class="w-2 h-2 bg-gray-500 rounded-full animate-pulse"></span>
+							</div>
+						</div>
+					</div>
+				)}
 			</div>
 			<div class="flex flex-row gap-[16px]">
 				<input
-					class="text-left shadow-xl rounded-2xl p-[16px] grow ring"
+					class="text-left shadow-xl rounded-2xl p-[16px] grow ring disabled:opacity-50"
 					type="text"
-					id="query"
-					name="username"
 					placeholder="Tanyakan sesuatu..."
 					value={inputValue}
 					onInput={(e) => setInputValue(e.currentTarget.value)}
 					onKeyPress={handleKeyPress}
+					disabled={isLoading}
 				/>
 				<button
-					id="submit"
 					onClick={handleSubmit}
-					class="text-right shadow-xl rounded-2xl p-[16px] flex-none bg-primary text-white hover:bg-primary/80 transition-all"
+					class="text-right shadow-xl rounded-2xl p-[16px] flex-none bg-primary text-white hover:bg-primary/80 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+					disabled={isLoading}
 				>
 					Kirim
 				</button>
@@ -109,4 +115,3 @@ export function Chat() {
 		</div>
 	);
 }
-
