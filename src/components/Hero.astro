@@ -1,14 +1,23 @@
 ---
-import hero from '../assets/hero.jpg';
+import heroVideo from '/hero0001-0922-final.mp4';
 ---
-<div 
-	id="hero"
-	class=" h-[900px] w-full bg-cover bg-center bg-fixed shadow-xl" 
-	style={{ backgroundImage: `url(${hero.src})` }}
->
-	<div class="z-10 w-full h-full flex flex-col text-white items-center justify-center gap-[8px] text-center px-4">
-		<h1 class="text-[48px] font-bold">Selamat Datang di Desa Wisata Taman Sendang Bandung</h1>
-		<p class="text-[20px]">Temukan ketenangan dan keindahan alam yang asli</p>
-		<a class="bg-primary px-[24px] py-[8px] my-[20px] rounded-full cursor-pointer hover:bg-hover transition-colors hover:shadow-2xl hover:scale-[1.02] transition-all" href="#paket">Pesan Sekarang</a>
-	</div>
+<div id="hero" class="relative h-[900px] w-full overflow-hidden shadow-xl">
+    <video
+      autoplay
+      loop
+      muted
+      playsinline
+      class="absolute top-0 left-0 w-full h-full object-cover z-0"
+    >
+      <source src={heroVideo} type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    <!-- <div class="absolute top-0 left-0 w-full h-full bg-black opacity-50 z-10"></div> -->
+
+    <div class="relative z-0 w-full h-full flex flex-col text-white items-center justify-center gap-[8px] text-center px-4">
+        <h1 class="text-[48px] font-bold">Selamat Datang di Desa Wisata Taman Sendang Bandung</h1>
+        <p class="text-[20px]">Temukan ketenangan dan keindahan alam yang asli</p>
+        <a class="bg-primary px-[24px] py-[8px] my-[20px] rounded-full cursor-pointer hover:bg-hover transition-colors hover:shadow-2xl hover:scale-[1.02] transition-all" href="#paket">Pesan Sekarang</a>
+    </div>
 </div>
