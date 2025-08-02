@@ -2,11 +2,9 @@
 import Layout from '../../layouts/Layout.astro';
 
 export function getStaticPaths() {
-    // Corrected path to be relative to the project root for consistency.
     const allPosts = Object.values(import.meta.glob('../../data/articles/*.md', { eager: true }));
     return allPosts.map((post) => {
         const { file, frontmatter, Content } = post;
-        // Use frontmatter.slug or generate from filename
         const article = frontmatter.slug || file.split('/').pop().replace('.md', '');
 
         return {
@@ -16,7 +14,6 @@ export function getStaticPaths() {
     });
 }
 
-// --- Prepare data for the "Other Articles" sidebar ---
 const rawPosts = Object.values(import.meta.glob('../../data/articles/*.md', { eager: true }));
 const allPosts = rawPosts.map((post) => {
     const { file, frontmatter } = post;
@@ -30,7 +27,6 @@ const allPosts = rawPosts.map((post) => {
 
 const { frontmatter, Content } = Astro.props;
 
-// Filter out the current article to create the "Other Articles" list
 const otherPosts = allPosts.filter(post => post.link !== Astro.url.pathname);
 ---
 <Layout title={frontmatter.title} description={frontmatter.description}>
