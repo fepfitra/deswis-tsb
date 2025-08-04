@@ -1,26 +1,61 @@
 ---
-import Section from './Section.astro';
+// import sendangLogo from '../assets/sendangbandung.svg';
+// Pastikan file logo KKN ini ada di direktori /public/
+const kknLogo = '/kkn-ugm-logo.svg'; 
 ---
+<footer class="w-full bg-gray-900 text-white">
+    <div class="container mx-auto px-4 md:px-8 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+            
+            {/* Kolom Tentang & Logo */}
+            <div class="lg:col-span-1 flex flex-col gap-4">
+                <div class="flex items-center gap-3">
+					<img src="/sendangbandung.svg" alt="Logo Taman Sendang Bandung" class="h-12 w-12 bg-white p-1 rounded-full"/>
+                    <h2 class="font-bold text-xl">Taman Sendang Bandung</h2>
+                </div>
+                <p class="text-gray-400">Desa wisata autentik dengan pemandangan memukau di Sleman, Yogyakarta.</p>
+                <div class="mt-4">
+                     <p class="text-sm text-gray-400 mb-2">Diselenggarakan oleh:</p>
+                     <a href="https://kkn.ugm.ac.id/" target="_blank" rel="noopener noreferrer">
+										<img src="/sendangbandung.svg" alt="Logo KKN PPM UGM" class="h-14"/>
+                     </a>
+                </div>
+            </div>
 
-<footer class="w-full bg-[#1E392A] text-white flex flex-col gap-[32px] items-center justify-center md:px-[144px] px-[48px] py-[48px]">
-	<div class="flex font-[16px] md:flex-row flex-col gap-[32px]">
-		<div class="flex flex-col gap-[16px] basis-1/4">
-			<h2 class="font-semibold">Tentang Kami</h2>
-			<p class="text-[#9CA3AF]">Desa Wisata Taman Sendang menawarkan pengalaman wisata alam yang autentik dengan pemandangan yang memukau.</p>
-		</div>
-		<div class="flex flex-col gap-[16px] basis-1/4">
-			<h2 class="font-semibold">Kontak</h2>
-			<p class="text-[#9CA3AF]">Email: sendangbandung@gmail.com<br>
-		</div>
-		<div class="flex flex-col gap-[16px] basis-1/4">
-			<h2 class="font-semibold">Link Cepat</h2>
-			<div class="flex flex-col gap-[8px] text-[#9CA3AF]">
-				<a href="#wisata">Destinasi Wisata</a>
-				<a href="#paket">Paket Tour</a>
-				<a href="#maps">Lokasi</a>
-				<a href="#galeri">Galeri Foto</a>
-			</div>
-		</div>
-	</div>
-	<div class="text-[#9CA3AF] text-[16px]">© 2025 Desa Wisata Taman Sendang. All rights reserved.</div>
+            {/* Kolom Tautan Cepat */}
+            <div class="lg:col-span-1">
+                <h3 class="font-semibold text-lg mb-4">Tautan Cepat</h3>
+                <ul class="flex flex-col gap-3">
+                    <li><a href="/#wisata" class="text-gray-300 hover:text-primary transition-colors">Potensi Wisata</a></li>
+                    <li><a href="/#sejarah" class="text-gray-300 hover:text-primary transition-colors">Sejarah</a></li>
+                    <li><a href="/#paket" class="text-gray-300 hover:text-primary transition-colors">Paket Wisata</a></li>
+                    <li><a href="/#artikel" class="text-gray-300 hover:text-primary transition-colors">Artikel</a></li>
+                </ul>
+            </div>
+
+            {/* Kolom Kontak */}
+            <div class="lg:col-span-1">
+                <h3 class="font-semibold text-lg mb-4">Kontak Kami</h3>
+                 <ul class="flex flex-col gap-3">
+                    <li><span class="font-semibold">Nuna:</span> <a href="https://wa.me/628118004488" class="text-gray-300 hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">+62 811-8004-488</a></li>
+                     <li><span class="font-semibold">Agung:</span> <a href="https://wa.me/6281215319456" class="text-gray-300 hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">+62 812-1531-9456</a></li>
+                    <li><span class="font-semibold">Email:</span> <a href="mailto:sendangbandung@gmail.com" class="text-gray-300 hover:text-primary transition-colors">sendangbandung@gmail.com</a></li>
+                </ul>
+            </div>
+
+            {/* Kolom Media Sosial */}
+            <div class="lg:col-span-1">
+                <h3 class="font-semibold text-lg mb-4">Ikuti Kami</h3>
+                <a href="https://instagram.com/tamansendangbandung" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-gray-300 hover:text-primary transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    <span>@tamansendangbandung</span>
+                </a>
+            </div>
+
+        </div>
+        <div class="text-center text-gray-500 text-sm mt-12 border-t border-gray-700 pt-8">
+            © {new Date().getFullYear()} Desa Wisata Taman Sendang.
+        </div>
+    </div>
 </footer>
+

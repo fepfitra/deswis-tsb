@@ -1,36 +1,52 @@
 ---
 import Section from './Section.astro';
-import boro from '../assets/hero.jpg';
+// Using one of the images you provided that shows the traditional Joglo.
+import heroVideo from '/hero0001-0922-final.mp4';
 ---
-<Section id="sejarah" className="bg-[#F9FAFB] shadow-xl">
-	<div class="flex md:flex-row flex-col gap-[32px] justify-center w-full ">
-		<h2 class="md:hidden block font-bold text-[30px] text-center">Kisah Desa Kami</h2>
-		<div class="md:h-[200px] min-h-[500px] bg-cover bg-center rounded-2xl basis-1/2 hover:shadow-2xl shadow-xl hover:scale-[1.02] transition-all" style={{ backgroundImage: `url(${boro.src})` }}></div>
-		<div class="basis-1/2 flex flex-col gap-[16px] justify-center">
-			<h2 class="md:block hidden font-bold text-[30px]">Kisah Desa Kami</h2>
-			<p>
-				<b>Taman Sendang Bandung</b> merupakan desa wisata rintisan yang terletak di Desa Karang. Kec, Moyudan, Kab. Sleman. tempat ini mulai dirintis sejak tahun 2020 pada masa pandemi dan mulai dioperasikan secara optimal pada tahun 2022.
-			</p>
-			<p>
-				<b>Konsep dari desa</b> ini adalah memberdayakan masyarakat, yairu darim oleh, dan untuk masyarakat. Lokasi Taman Sendang Bandung merupakan salah satu situs bresejarah yang menceritakan Pangeran Diponegoro.
-			</p>
-			<p>
-				<b>Taman Sendang Bandung</b> memiliki joglo sebagai center area dengan luas 2000-3000 m2. Dea wisata ini akan dikembangkan dengan menerapkan Seni budaya holtikultura, kuliner, dan penginapan. Kawasan yang akan dikembangkan menggunakan 5 bidang tanah khas desa sebesar 8000-9000 m2.
-			</p>
-			<div class="flex gap-[22px] text-center pt-[30px]">
-				<div class="flex flex-col gap-[8px] basis-1/3">
-					<h3 class="text-[20px] font-bold">10 Spot</h3>
-					<p class="text[14px]">Foto Instagramable</p>
-				</div>
-				<div class="flex flex-col gap-[8px] basis-1/3">
-					<h3 class="text-[20px] font-bold">0.8-0.9 Ha</h3
-					<p class="text[14px]">Area Wisata</p>
-				</div>
-				<div class="flex flex-col gap-[8px] basis-1/3">
-					<h3 class="text-[20px] font-bold">15+</h3>
-					<p class="text[14px]">Jenis Aktifitas</p>
-				</div>
-			</div>
-		</div>
-	</div>
+<Section id="sejarah">
+    <div class="flex md:flex-row flex-col-reverse gap-8 md:gap-12 items-center">
+        
+        <!-- Image Column -->
+        <div class="w-full md:w-1/2">
+					<video
+							autoplay
+							loop
+							muted
+							playsinline
+							class="rounded-2xl shadow-xl w-full h-auto object-cover aspect-square md:aspect-auto transition-transform duration-300 hover:scale-105" 
+					>
+							<source src={heroVideo} type="video/mp4" />
+							Your browser does not support the video tag.
+					</video>
+
+        </div>
+
+        <!-- Text Content Column -->
+        <div class="w-full md:w-1/2 flex flex-col gap-4">
+            <h2 class="text-3xl md:text-4xl font-bold">Kisah Desa Kami</h2>
+            <p class="text-lg text-gray-600">
+                <b>Taman Sendang Bandung</b> merupakan desa wisata rintisan yang mulai dioperasikan secara optimal pada tahun 2022 dengan konsep pemberdayaan dari, oleh, dan untuk masyarakat.
+            </p>
+            <p>
+                Lokasi ini juga merupakan salah satu situs bersejarah yang berkaitan dengan perjuangan Pangeran Diponegoro. Kini, kami kembangkan menjadi kawasan wisata edukasi yang memadukan seni budaya, holtikultura, kuliner, dan penginapan.
+            </p>
+            
+            <!-- Statistics Section -->
+            <div class="grid grid-cols-3 gap-4 text-center pt-6">
+                <div class="bg-primary/10 p-4 rounded-xl">
+                    <h3 class="text-2xl font-bold text-primary">10+</h3>
+                    <p class="text-sm font-medium text-gray-700">Spot Foto</p>
+                </div>
+                <div class="bg-primary/10 p-4 rounded-xl">
+                    <h3 class="text-2xl font-bold text-primary">~1 Ha</h3>
+                    <p class="text-sm font-medium text-gray-700">Area Wisata</p>
+                </div>
+                <div class="bg-primary/10 p-4 rounded-xl">
+                    <h3 class="text-2xl font-bold text-primary">10+</h3>
+                    <p class="text-sm font-medium text-gray-700">Jenis Aktivitas</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </Section>

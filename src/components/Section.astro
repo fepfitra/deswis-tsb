@@ -1,9 +1,9 @@
 ---
 const {id, className} = Astro.props;
 ---
-<article 
-  id={id} 
-  class={`w-full px-[32px] py-[80px] flex items-center justify-center gap-[48px] ${className || ''}`}
+<section
+    id={id}
+    class:list={['w-full container mx-auto px-4 md:px-8 py-16 md:py-24', className]}
 >
     <slot/>
-</article>
+</section>

@@ -1,31 +1,39 @@
 ---
 import Section from './Section.astro';
-import boro from '../assets/hero.jpg';
 
-// It's better to use an array to avoid repeating code.
 const galleryImages = [
-    { src: boro.src, alt: "Scenery at Taman Sendang Bandung 1" },
-    { src: boro.src, alt: "Scenery at Taman Sendang Bandung 2" },
-    { src: boro.src, alt: "Scenery at Taman Sendang Bandung 3" },
-    { src: boro.src, alt: "Scenery at Taman Sendang Bandung 4" },
-    { src: boro.src, alt: "Scenery at Taman Sendang Bandung 5" },
-    { src: boro.src, alt: "Scenery at Taman Sendang Bandung 6" },
+    { src: "/content/boro.jpg", alt: "Suasana asri di Taman Sendang Bandung" },
+    { src: "/content/boro.jpg", alt: "Kegiatan outbound yang seru" },
+    { src: "/content/boro.jpg", alt: "Dekorasi pernikahan outdoor yang elegan" },
+    { src: "/content/boro.jpg", alt: "Area camping di malam hari" },
+    { src: "/content/boro.jpg", alt: "Anak-anak bermain di alam terbuka" },
+    { src: "/content/boro.jpg", alt: "Anak-anak bermain di alam terbuka" },
+    { src: "/content/boro.jpg", alt: "Anak-anak bermain di alam terbuka" },
 ];
 ---
-<Section id="galeri" className="py-12 md:py-20">
-    <div class="flex flex-col w-full text-center">
-        <div class="mb-8 md:mb-12">
-            <h2 class="font-bold text-2xl md:text-3xl">Galeri Foto</h2>
-        </div>
-
-        <div class="w-full lg:overflow-x-auto simple-scrollbar">
-            <div class="flex flex-col lg:flex-row items-center gap-8 px-4">
+<Section id="galeri">
+    <div class="flex flex-col w-full text-center items-center">
+        <h2 class="text-3xl md:text-4xl font-bold">Galeri Foto</h2>
+        <p class="mt-4 max-w-2xl text-lg text-gray-600">
+            Lihat momen-momen indah yang tertangkap di desa kami, dari pemandangan alam hingga keceriaan pengunjung.
+        </p>
+        
+        <div class="mt-12 w-full overflow-x-auto pb-4 simple-scrollbar">
+            <div class="flex gap-6">
                 {galleryImages.map((image) => (
-                    <div
-                        class="w-full max-w-lg lg:w-[500px] h-[300px] lg:flex-shrink-0 bg-cover bg-center rounded-2xl shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all"
-                        style={{ backgroundImage: `url(${image.src})` }}
-                        aria-label={image.alt}
-                    >
+                    <div class="w-80 md:w-96 flex-shrink-0">
+                        <div class="group relative overflow-hidden rounded-2xl shadow-lg transition-all duration-300 ease-in-out cursor-pointer">
+                            <img 
+                                src={image.src} 
+                                alt={image.alt} 
+                                class="w-full object-cover scale-100 group-hover:scale-110 transition-transform duration-500" 
+                                loading="lazy"
+                                onerror="this.onerror=null;this.src='https://placehold.co/384x384/f87171/ffffff?text=Image+Error';"
+                            />
+                            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4">
+                                <p class="text-white text-center text-sm md:text-base">{image.alt}</p>
+                            </div>
+                        </div>
                     </div>
                 ))}
             </div>
@@ -34,18 +42,20 @@ const galleryImages = [
 </Section>
 
 <style>
+/* Gaya scrollbar yang bersih dan sederhana */
 .simple-scrollbar::-webkit-scrollbar {
     height: 8px;
 }
 .simple-scrollbar::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: #e5e7eb; /* bg-gray-200 */
     border-radius: 10px;
 }
 .simple-scrollbar::-webkit-scrollbar-thumb {
-    background: #ccc;
+    background: #9ca3af; /* bg-gray-400 */
     border-radius: 10px;
 }
 .simple-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: #aaa;
+    background: #6b7280; /* bg-gray-500 */
 }
 </style>
+

@@ -1,35 +1,48 @@
 ---
 import Section from './Section.astro';
+
+// Daftar testimoni dari pengunjung.
 const testimonies = [
-	{
-		name: "Hetty Dwi Nurhayati",
-		rating: "⭐⭐⭐⭐⭐",
-		comment: "tempat yg cocok untuk gathering, camping, outbond dengan nuansa alam yang asri ...sejuk dan alami....topp",
-	},
-	{
-		name: "Retnowati Dian Adiningsih,SP",
-		rating: "⭐⭐⭐⭐⭐",
-		comment: "tepat yang cocok untuk kegiatan camp  dengan kapasitas maks 100. tinggal tambah km biar gak lama antre. Fasilitas sound, makan,snack,air,listrik, keamanan, dapur dan perlengkapannya. semga tahun depan bisa ngecamp lagi disini dengan fasilitas lebih baik lagi",
-	},
-	{
-		name: "AW",
-		rating: "⭐⭐⭐⭐⭐",
-		comment: "Suasana Pedesaan dengan suara deras air sungai sangat menenangkan untuk dikunjungi terlebih waktu pagi hari ..",
-	},
+    { 
+        name: "Hetty Dwi Nurhayati", 
+        rating: 5, 
+        comment: "Tempat yg cocok untuk gathering, camping, outbond dengan nuansa alam yang asri, sejuk dan alami. Top!", 
+    },
+    { 
+        name: "Retnowati Dian Adiningsih, SP", 
+        rating: 5, 
+        comment: "Tepat untuk kegiatan camp kapasitas maks 100. Fasilitas sound, makan, snack, air, listrik, keamanan, dapur lengkap. Semoga tahun depan bisa ngecamp lagi disini dengan fasilitas lebih baik lagi.", 
+    },
+    { 
+        name: "AW", 
+        rating: 5, 
+        comment: "Suasana pedesaan dengan suara deras air sungai sangat menenangkan untuk dikunjungi, terlebih waktu pagi hari.", 
+    },
 ];
 ---
-<Section id="testimoni" className="flex-col gap-[48px]">
-	<h2 class="font-bold text-[30px]">Apa Kata Mereka</h2>
-	<div class="flex flex-wrap gap-[32px] justify-center ">
-		{testimonies.map((testimony) => (
-			<div class="sm:w-[437px] min-h-[240px] bg-white p-[24px] h-full shadow-xl rounded-2xl hover:shadow-2xl hover:scale-[1.02] transition-all">
-				<svg class="text-[32px] text-[#006C4C] w-[32px] pb-[8px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 310 310"><path d="M231 167.84c6.02 0 11.42-.28 16.25-.81-7.1 29.03-22.95 44.36-45.88 56.04-5.33 2.71-7.63 9.1-5.23 14.57l6.04 13.77c2.59 5.91 9.62 8.44 15.38 5.53 22.1-11.11 37.39-23.92 48.76-40.63C281.58 193.89 289 164.4 289 126.17v-16.52c0-31.95-.11-57.81-58-57.81-58 0-58 25.97-58 58s-.38 58 58 58zm-152 0c6.02 0 11.42-.28 16.25-.81-7.1 29.03-22.95 44.36-45.88 56.04-5.33 2.71-7.63 9.1-5.23 14.57l6.04 13.77c2.59 5.91 9.62 8.44 15.38 5.53 22.1-11.11 37.39-23.92 48.76-40.63C129.58 193.89 137 164.4 137 126.17v-16.52c0-31.95-.11-57.81-58-57.81-58 0-58 25.97-58 58s-.38 58 58 58z" fill="#000000"></path></svg>
-				<p>{testimony.comment}</p>
-				<div class="flex flex-col pt-[24px]">
-					<span class="font-medium text-[16px]">{testimony.name}</span>
-					<span class="text-[16px]">{testimony.rating}</span>
-				</div>
-			</div>
-		))}
-	</div>
+<Section id="testimoni" className="bg-gray-50">
+    <div class="flex flex-col w-full text-center items-center">
+        <h2 class="text-3xl md:text-4xl font-bold">Apa Kata Mereka</h2>
+        <p class="mt-4 max-w-2xl text-lg text-gray-600">
+            Kami bangga dapat memberikan pengalaman terbaik. Inilah yang dikatakan para pengunjung kami.
+        </p>
+        
+        {/* Layout grid yang rapi untuk menampilkan testimoni */}
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
+            {testimonies.map((testimony) => (
+                <div class="card p-8 flex flex-col text-left !shadow-md h-full">
+                    {/* Menampilkan bintang rating secara dinamis */}
+                    <div class="text-yellow-400 text-2xl mb-4 flex gap-1">
+                        {Array(testimony.rating).fill('★').map(star => <span>{star}</span>)}
+                        {Array(5 - testimony.rating).fill('☆').map(star => <span class="text-gray-300">{star}</span>)}
+                    </div>
+                    <p class="text-gray-600 grow italic">"{testimony.comment}"</p>
+                    <div class="mt-6 pt-6 border-t">
+                        <span class="font-bold text-gray-800">{testimony.name}</span>
+                    </div>
+                </div>
+            ))}
+        </div>
+    </div>
 </Section>
+

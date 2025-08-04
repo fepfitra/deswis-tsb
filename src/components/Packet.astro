@@ -1,72 +1,66 @@
+
 ---
-// I'm assuming you have a Section component like the one in your original code.
-// If not, you can replace <Section> with a <div>.
 import Section from './Section.astro';
 
-// Packet data remains the same.
 const packets = [
-	{name:  "Meeting", img: "/packets/meeting.webp"},
-	{name: "Wedding", img: "/packets/weddingtmp.webp"},
-	{name:  "Gathering", img: "/packets/gathering.webp"},
-	{name:  "Outbound", img: "/packets/outbound.webp"},
-	{name:  "Camping", img: "/packets/camping.webp"},
-	{name:  "Parenting", img: "/packets/parenting.webp"},
-]
+    {
+        name: "Paket Meeting", 
+        img: "/packets/meeting.webp",
+        description: "Fasilitas lengkap untuk rapat kerja Anda di tengah suasana alam yang tenang dan inspiratif."
+    },
+    {
+        name: "Paket Outbound", 
+        img: "/packets/outbound.webp",
+        description: "Tingkatkan kerjasama tim dengan berbagai permainan seru dan menantang di alam terbuka."
+    },
+    {
+        name: "Paket Wedding", 
+        img: "/packets/weddingtmp.webp",
+        description: "Wujudkan pernikahan impian Anda dengan latar pemandangan desa yang romantis dan tak terlupakan."
+    },
+    {
+        name: "Paket Camping", 
+        img: "/packets/camping.webp",
+        description: "Rasakan sensasi bermalam di bawah bintang dengan fasilitas camping yang nyaman dan aman."
+    },
+    {
+        name: "Paket Gathering", 
+        img: "/packets/gathering.webp",
+        description: "Ciptakan momen kebersamaan yang hangat dengan berbagai aktivitas menyenangkan."
+    },
+];
 ---
-<Section id="paket" className="py-12 md:py-20 bg-gray-50">
-    <div class="container mx-auto px-4">
-        <div class="flex flex-col w-full text-center mb-8 md:mb-12">
-            <h2 class="font-bold text-3xl md:text-4xl text-gray-800">Paket Wisata</h2>
-            <p class="text-gray-600 mt-2">Pilih petualangan Anda berikutnya bersama kami.</p>
-        </div>
+<Section id="paket" className="bg-gray-50">
+    <div class="flex flex-col items-center w-full text-center">
+        <h2 class="text-3xl md:text-4xl font-bold">Paket Wisata</h2>
+        <p class="mt-4 max-w-2xl text-lg text-gray-600">
+            Pilih paket yang paling sesuai untuk petualangan Anda, dari rapat hingga liburan keluarga yang tak terlupakan.
+        </p>
         
-        <!-- Responsive container for the cards -->
-        <div class="w-full md:overflow-x-auto md:pb-4 simple-scrollbar">
-            <!-- Stacks vertically on mobile, scrolls horizontally on desktop -->
-            <div class="flex flex-col md:flex-row gap-8">
-                {packets.map((item) => (
-                    // Card container
-                    <div class="group bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 ease-in-out hover:shadow-2xl w-full md:w-80 lg:w-96 md:flex-shrink-0">
-                        
-                        <!-- Image container for zoom effect -->
+				<div class="w-full mt-12 flex flex-wrap -mx-4 justify-center">
+            {packets.map((item) => (
+                <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
+                    <div class="card h-full text-left group flex flex-col">
                         <div class="overflow-hidden">
                             <img 
                                 src={item.img} 
-                                alt={item.name} 
+                                alt={`Gambar untuk ${item.name}`}
                                 class="w-full h-64 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+                                loading="lazy"
                                 onerror="this.onerror=null;this.src='https://placehold.co/400x256/f87171/ffffff?text=Image+Error';"
                             />
                         </div>
-                        
-                        <!-- Content container -->
-                        <div class="p-6 flex flex-col items-start">
-                            <h3 class="text-2xl font-bold text-gray-800 mb-4">{item.name}</h3>
-                            <a href="#kontak" class="w-full text-center text-white bg-primary px-6 py-3 mt-auto rounded-full cursor-pointer transition-colors">
-                                Pesan Sekarang
+                        <div class="p-6 flex flex-col items-start grow">
+                            <h3 class="text-2xl !text-gray-800 mb-2 font-semibold">{item.name}</h3>
+                            <p class="text-gray-600 mb-6">{item.description}</p>
+                            <a href="#maps" class="btn w-full text-center mt-auto bg-primary">
+                                Info & Pemesanan
                             </a>
                         </div>
                     </div>
-                ))}
-            </div>
+                </div>
+            ))}
         </div>
     </div>
 </Section>
-
-<style>
-/* Simple and clean scrollbar styling */
-.simple-scrollbar::-webkit-scrollbar {
-    height: 8px;
-}
-.simple-scrollbar::-webkit-scrollbar-track {
-    background: #e5e7eb; /* bg-gray-200 */
-    border-radius: 10px;
-}
-.simple-scrollbar::-webkit-scrollbar-thumb {
-    background: #9ca3af; /* bg-gray-400 */
-    border-radius: 10px;
-}
-.simple-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: #6b7280; /* bg-gray-500 */
-}
-</style>
 

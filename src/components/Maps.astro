@@ -1,37 +1,60 @@
 ---
 import Section from './Section.astro';
-import boro from '../assets/hero.jpg';
 ---
-<Section id="maps" className="bg-[#F9FAFB] flex-col shadow-xl">
-	<h2 class="font-bold text-[30px]">Lokasi Kami</h2>
-	<div class="flex w-full gap-[32px] justify-center md:flex-row flex-col">
-		<div class="basis-1/2">
-			<iframe class="w-full hover:shadow-2xl hover:scale-[1.02] transition-all" height="350" src="https://www.openstreetmap.org/export/embed.html?bbox=110.23723483085634%2C-7.77580888537943%2C110.24856448173524%2C-7.766464848777949&amp;layer=mapnik&amp;marker=-7.771131577922186%2C110.24289965629578" style="border: 1px solid black"></iframe>
-		</div>
-		<div class="basis-1/2 flex flex-col gap-[24px] text-[16px]">
-			<div>
-				<div class="font-bold">Alamat</div>
-				<div class="font-[#4B5563]">Karang, Sumberagung, Kec. Moyudan, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55563</div>
-			</div>
-			<div>
-				<a class="text-white bg-primary px-[24px] py-[8px] my-[20px] rounded-full cursor-pointer hover:bg-hover transition-colors hover:shadow-2xl hover:scale-[1.02] transition-all" href="https://maps.app.goo.gl/WDFPx3M3sJVg47UR9">Ke Google Maps</a>
-			</div>
-			<div>
-				<div class="font-bold">Whatsapp</div>
-				<div class="font-[#4B5563]">+62 811-8004-488 (Nuna)</div>
-				<div class="font-[#4B5563]">+62 812-1531-9456 (Agung)</div>
-			</div>
-			<div>
-				<div class="font-bold">Instagram</div>
-				<div class="font-[#4B5563]">@tamansendangbandung</div>
-			</div>
-			<div>
-				<a class="text-white bg-primary px-[24px] py-[8px] my-[20px] rounded-full cursor-pointer hover:bg-hover transition-colors hover:shadow-2xl hover:scale-[1.02] transition-all" href="https://instagram.com/tamansendangbandung">Ke Instagram</a>
-			</div>
-			<div>
-				<div class="font-bold">Email</div>
-				<div class="font-[#4B5563]">sendangbandung@gmail.com</div>
-			</div>
-		</div>
-	</div>
+<Section id="maps">
+    <div class="flex flex-col items-center w-full text-center">
+        <h2 class="text-3xl md:text-4xl font-bold">Kunjungi Kami</h2>
+        <p class="mt-4 max-w-2xl text-lg text-gray-600">
+            Kami siap menyambut Anda. Temukan lokasi kami di peta atau hubungi kami langsung untuk informasi lebih lanjut.
+        </p>
+    </div>
+    <div class="flex w-full gap-8 md:gap-12 justify-center md:flex-row flex-col mt-12">
+        
+        {/* Kolom Peta */}
+        <div class="w-full md:w-1/2">
+            <iframe 
+                class="w-full h-96 rounded-2xl shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-1" 
+                loading="lazy"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=110.23723483085634%2C-7.77580888537943%2C110.24856448173524%2C-7.766464848777949&amp;layer=mapnik&amp;marker=-7.771131577922186%2C110.24289965629578">
+            </iframe>
+        </div>
+
+        {/* Kolom Informasi Kontak dengan Ikon */}
+        <div class="w-full md:w-1/2 flex flex-col gap-4 text-left">
+            <div>
+                <h3 class="font-bold text-xl !text-gray-800 mb-3">Detail Kontak</h3>
+                <div class="space-y-4">
+                    
+                    <!-- Alamat -->
+                    <a href="https://maps.app.goo.gl/WDFPx3M3sJVg47UR9" target="_blank" rel="noopener noreferrer" class="group flex items-start gap-4 p-4 rounded-lg hover:bg-primary/10 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 group-hover:text-primary transition-colors flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                        <div>
+                            <span class="font-semibold text-gray-800">Alamat</span>
+                            <p class="text-gray-600">Karang, Sumberagung, Kec. Moyudan, Kabupaten Sleman, DIY</p>
+                        </div>
+                    </a>
+
+                    <!-- Narahubung -->
+                    <div class="group flex items-start gap-4 p-4 rounded-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+                        <div>
+                            <span class="font-semibold text-gray-800">Narahubung</span>
+                            <p class="text-gray-600">Nuna: <a href="https://wa.me/628118004488" class="text-primary hover:underline" target="_blank" rel="noopener noreferrer">+62 811-8004-488</a></p>
+                            <p class="text-gray-600">Agung: <a href="https://wa.me/6281215319456" class="text-primary hover:underline" target="_blank" rel="noopener noreferrer">+62 812-1531-9456</a></p>
+                        </div>
+                    </div>
+
+                    <!-- Media Sosial -->
+                    <a href="https://instagram.com/tamansendangbandung" target="_blank" rel="noopener noreferrer" class="group flex items-start gap-4 p-4 rounded-lg hover:bg-primary/10 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 group-hover:text-primary transition-colors flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        <div>
+                            <span class="font-semibold text-gray-800">Instagram</span>
+                            <p class="text-gray-600">@tamansendangbandung</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 </Section>
+

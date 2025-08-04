@@ -5,21 +5,51 @@
 @tailwind utilities;
 
 @plugin '@tailwindcss/typography';
+
+@layer base {
+    :root {
+        --font-sans: 'Inter', 'sans-serif';
+
+        /* "Sendang Asri" Palette */
+        --color-primary: #2A6F2A;      /* Forest Canopy Green (for branding, titles) */
+        --color-accent: #F59E0B;       /* Golden Hour (for buttons and CTAs) */
+        --color-accent-hover: #D97706;    /* Darker Gold for hover */
+        --color-text-dark: #262626;    /* Deep Charcoal (for body text) */
+        --color-text-light: #F9FAFB;   /* Soft Linen (for text on dark backgrounds) */
+        --color-background: #F9FAFB;   /* The main light background color */
+    }
+
+    html {
+        @apply font-sans;
+        scroll-behavior: smooth;
+    }
+
+    body {
+        background-color: var(--color-background);
+        color: var(--color-text-dark);
+    }
+}
+
 @theme {
-  --font-sans: 'Inter', 'sans-serif';
-	--color-primary: #27AE60;
-	--color-hover: #219150
+	--color-primary: var(--color-primary);
+	--color-accent: var(--color-accent);
+	--color-accent-hover: var(--color-accent-hover);
+	--color-text-dark: var(--color-text-dark);
+	--color-text-light: var(--color-text-light);
+	--color-background: var(--color-background);
 }
 
-@keyframes scroll-horizontal {
-	from {
-		transform: translateX(0);
-	}
-	to {
-		transform: translateX(-100%); /* Or a calculated value */
-	}
-}
+@layer components {
+    .btn {
+        @apply inline-block px-8 py-3 rounded-full font-semibold text-white transition-all duration-300 ease-in-out;
+        background-color: var(--color-accent);
+    }
+    .btn:hover {
+        background-color: var(--color-accent-hover);
+        @apply shadow-lg scale-105;
+    }
 
-.animate-scroll-horizontal {
-	animation: scroll-horizontal 20s linear infinite; /* Adjust duration as needed */
+    .card {
+        @apply bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1;
+    }
 }

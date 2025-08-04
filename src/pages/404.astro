@@ -1,0 +1,27 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+---
+<Layout title="404: Halaman Tidak Ditemukan" description="Halaman yang Anda cari tidak dapat ditemukan.">
+		<div
+				class="relative w-full bg-cover bg-center pt-48 pb-24"
+		style={{ backgroundImage: `url(${'/content/boro.jpg'})` }}
+		>
+		</div>
+    <main class="relative flex items-center justify-center text-center py-32 md:py-40 px-4 min-h-[calc(100vh-100px)]">
+        <div class="max-w-lg relative z-10">
+            <h1 class="text-9xl font-extrabold !text-primary tracking-tighter">404</h1>
+            <p class="mt-4 text-2xl font-semibold !text-gray-800">
+                Halaman Tidak Ditemukan
+            </p>
+            <p class="mt-2 text-lg text-gray-600">
+                Maaf, kami tidak dapat menemukan halaman yang Anda cari. Mungkin halaman tersebut telah dihapus atau tautannya salah.
+            </p>
+            <a href="/" class="btn mt-8 bg-primary">
+                Kembali ke Beranda
+            </a>
+        </div>
+    </main>
+    <Footer />
+</Layout>
+
