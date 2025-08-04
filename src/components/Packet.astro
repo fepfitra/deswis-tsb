@@ -1,29 +1,50 @@
 ---
+// I'm assuming you have a Section component like the one in your original code.
+// If not, you can replace <Section> with a <div>.
 import Section from './Section.astro';
 
+// Packet data remains the same.
 const packets = [
-    "Meeting", "Wedding", "Gathering", "Outbound", "Parenting", "Camping"
+	{name:  "Meeting", img: "/packets/meeting.webp"},
+	{name: "Wedding", img: "/packets/weddingtmp.webp"},
+	{name:  "Gathering", img: "/packets/gathering.webp"},
+	{name:  "Outbound", img: "/packets/outbound.webp"},
+	{name:  "Camping", img: "/packets/camping.webp"},
+	{name:  "Parenting", img: "/packets/parenting.webp"},
 ]
 ---
-<Section id="paket" className="py-12 md:py-20">
-    <div class="flex flex-col w-full text-center">
-        <div class="mb-8 md:mb-12">
-            <h2 class="font-bold text-2xl md:text-3xl">Paket Wisata</h2>
+<Section id="paket" className="py-12 md:py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+        <div class="flex flex-col w-full text-center mb-8 md:mb-12">
+            <h2 class="font-bold text-3xl md:text-4xl text-gray-800">Paket Wisata</h2>
+            <p class="text-gray-600 mt-2">Pilih petualangan Anda berikutnya bersama kami.</p>
         </div>
         
-        <div class="w-full lg:overflow-x-auto simple-scrollbar">
-            <div class="flex flex-col lg:flex-row items-center gap-8 px-4">
+        <!-- Responsive container for the cards -->
+        <div class="w-full md:overflow-x-auto md:pb-4 simple-scrollbar">
+            <!-- Stacks vertically on mobile, scrolls horizontally on desktop -->
+            <div class="flex flex-col md:flex-row gap-8">
                 {packets.map((item) => (
-                    <div class="w-full max-w-sm lg:w-[350px] lg:flex-shrink-0 h-[394px] shadow-xl rounded-2xl p-8 flex md:flex-col flex-col gap-4 hover:shadow-2xl hover:scale-[1.02] transition-all m-[32px]">
-                        <h3 class="font-bold text-xl">{item}</h3>
-                        <h4 class="font-bold text-primary text-3xl">Rp250.000</h4>
-                        <ul class="flex flex-col gap-4 text-base text-left">
-                            <li class="flex items-center gap-2">✔ Guide Lokal</li>
-                            <li class="flex items-center gap-2">✔ Makanan & Minuman</li>
-                            <li class="flex items-center gap-2">✔ Dokumentasi</li>
-                            <li class="flex items-center gap-2">✔ Aktivitas Seru</li>
-                        </ul>
-                        <a class="text-center text-white bg-primary px-6 py-2 mt-auto rounded-full cursor-pointer hover:bg-hover transition-colors" href="#paket">Pesan Sekarang</a>
+                    // Card container
+                    <div class="group bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 ease-in-out hover:shadow-2xl w-full md:w-80 lg:w-96 md:flex-shrink-0">
+                        
+                        <!-- Image container for zoom effect -->
+                        <div class="overflow-hidden">
+                            <img 
+                                src={item.img} 
+                                alt={item.name} 
+                                class="w-full h-64 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+                                onerror="this.onerror=null;this.src='https://placehold.co/400x256/f87171/ffffff?text=Image+Error';"
+                            />
+                        </div>
+                        
+                        <!-- Content container -->
+                        <div class="p-6 flex flex-col items-start">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4">{item.name}</h3>
+                            <a href="#kontak" class="w-full text-center text-white bg-primary px-6 py-3 mt-auto rounded-full cursor-pointer transition-colors">
+                                Pesan Sekarang
+                            </a>
+                        </div>
                     </div>
                 ))}
             </div>
@@ -32,18 +53,20 @@ const packets = [
 </Section>
 
 <style>
+/* Simple and clean scrollbar styling */
 .simple-scrollbar::-webkit-scrollbar {
     height: 8px;
 }
 .simple-scrollbar::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: #e5e7eb; /* bg-gray-200 */
     border-radius: 10px;
 }
 .simple-scrollbar::-webkit-scrollbar-thumb {
-    background: #ccc;
+    background: #9ca3af; /* bg-gray-400 */
     border-radius: 10px;
 }
 .simple-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: #aaa;
+    background: #6b7280; /* bg-gray-500 */
 }
 </style>
+
