@@ -1,5 +1,4 @@
 ---
-import heroVideo from '/hero0001-0922-final.mp4';
 import { hero } from '../data/konfigurasi.js';
 ---
 <section id="hero" class="relative h-screen min-h-[600px] w-full overflow-hidden flex items-center justify-center">
@@ -11,7 +10,7 @@ import { hero } from '../data/konfigurasi.js';
 		playsinline
 		class="absolute top-1/2 left-1/2 w-full h-full -translate-x-1/2 -translate-y-1/2 object-cover z-0"
 	>
-		<source src={heroVideo} type="video/mp4" />
+		<source src={hero.video} type="video/mp4" />
 		Your browser does not support the video tag.
 	</video>
 

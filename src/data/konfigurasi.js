@@ -5,7 +5,8 @@ const head = {
 
 const hero = {
 	title: "Desa Wisata Taman Sendang Bandung",
-	subtitle: "Temukan ketenangan dan keindahan alam asli di Desa Wisata Taman Sendang Bandung, Sleman, Yogyakarta"
+	subtitle: "Temukan ketenangan dan keindahan alam asli di Desa Wisata Taman Sendang Bandung, Sleman, Yogyakarta",
+	video: "/hero0001-0922-final.mp4"
 }
 
 const potensi = {
