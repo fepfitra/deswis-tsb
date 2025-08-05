@@ -2,6 +2,7 @@
 import Section from './Section.astro';
 import ObjectItem from './ObjectItem.astro';
 import hero from '../assets/hero.jpg';
+import { artikel } from '../data/konfigurasi.js';
 
 const rawPosts = Object.values(import.meta.glob('../data/articles/*.md', { eager: true }));
 
@@ -22,9 +23,9 @@ const sortedPosts = allPosts.sort((a, b) => new Date(b.date) - new Date(a.date))
 ---
 <Section id="artikel" className="bg-white">
     <div class="flex flex-col items-center w-full text-center">
-        <h2 class="text-3xl md:text-4xl">Artikel & Berita</h2>
+		<h2 class="text-3xl md:text-4xl font-bold">{artikel.title}</h2>
         <p class="mt-4 max-w-2xl text-lg text-gray-600">
-            Ikuti cerita, kegiatan, dan pengumuman terbaru dari desa kami.
+			{artikel.subtitle}
         </p>
         
         <div class="w-full mt-12 overflow-x-auto pb-4 simple-scrollbar">

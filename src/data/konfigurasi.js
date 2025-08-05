@@ -109,4 +109,10 @@ const kontak = {
 	}
 }
 
-export { head, hero, potensi, bot, history, paket, kontak }
+
+const artikel = {
+	title: "Artikel & Berita",
+	subtitle: "Ikuti cerita, kegiatan, dan pengumuman terbaru dari desa kami."
+}
+
+export { head, hero, potensi, bot, history, paket, kontak, artikel }
