@@ -53,4 +53,36 @@ const history = {
 	]
 }
 
-export { head, hero, potensi, bot, history }
+const paket = {
+	title: "Paket Wisata",
+	subtitle: "Pilih paket yang paling sesuai untuk petualangan Anda, dari rapat hingga liburan keluarga yang tak terlupakan.",
+	packets: [
+		{
+			name: "Paket Meeting",
+			img: "/packets/meeting.webp",
+			description: "Fasilitas lengkap untuk rapat kerja Anda di tengah suasana alam yang tenang dan inspiratif."
+		},
+		{
+			name: "Paket Outbound",
+			img: "/packets/outbound.webp",
+			description: "Tingkatkan kerjasama tim dengan berbagai permainan seru dan menantang di alam terbuka."
+		},
+		{
+			name: "Paket Wedding",
+			img: "/packets/weddingtmp.webp",
+			description: "Wujudkan pernikahan impian Anda dengan latar pemandangan desa yang romantis dan tak terlupakan."
+		},
+		{
+			name: "Paket Camping",
+			img: "/packets/camping.webp",
+			description: "Rasakan sensasi bermalam di bawah bintang dengan fasilitas camping yang nyaman dan aman."
+		},
+		{
+			name: "Paket Gathering",
+			img: "/packets/gathering.webp",
+			description: "Ciptakan momen kebersamaan yang hangat dengan berbagai aktivitas menyenangkan."
+		},
+	]
+}
+
+export { head, hero, potensi, bot, history, paket }
