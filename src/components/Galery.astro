@@ -4,7 +4,6 @@ import Section from './Section.astro';
 // Secara dinamis mengimpor semua gambar dari direktori /src/data/galleri/
 // Ini akan mengambil file .jpeg, .jpg, .png, dan .webp
 const images = import.meta.glob('../data/galeri/*.{jpeg,jpg,png,webp}', { eager: true });
-console.log(images);
 
 // Membuat array galleryImages dari gambar yang diimpor
 const galleryImages = Object.entries(images).map(([path, module]) => {
