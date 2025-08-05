@@ -1,5 +1,6 @@
 ---
 import Section from './Section.astro';
+import { galeri } from '../data/konfigurasi.js';
 
 // Secara dinamis mengimpor semua gambar dari direktori /src/data/galleri/
 // Ini akan mengambil file .jpeg, .jpg, .png, dan .webp
@@ -19,9 +20,9 @@ const galleryImages = Object.entries(images).map(([path, module]) => {
 ---
 <Section id="galeri">
     <div class="flex flex-col w-full text-center items-center">
-        <h2 class="text-3xl md:text-4xl font-bold">Galeri Foto</h2>
+		<h2 class="text-3xl md:text-4xl font-bold">{galeri.title}</h2>
         <p class="mt-4 max-w-2xl text-lg text-gray-600">
-            Lihat momen-momen indah yang tertangkap di desa kami, dari pemandangan alam hingga keceriaan pengunjung.
+					{galeri.subtitle}
         </p>
         
         <div class="mt-12 w-full overflow-x-auto pb-4 simple-scrollbar">

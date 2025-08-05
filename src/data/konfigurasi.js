@@ -115,4 +115,9 @@ const artikel = {
 	subtitle: "Ikuti cerita, kegiatan, dan pengumuman terbaru dari desa kami."
 }
 
-export { head, hero, potensi, bot, history, paket, kontak, artikel }
+const galeri = {
+	title: "Galeri",
+	subtitle: "Lihat momen-momen indah yang tertangkap di desa kami, dari pemandangan alam hingga keceriaan pengunjung. "
+}
+
+export { head, hero, potensi, bot, history, paket, kontak, artikel, galeri }
