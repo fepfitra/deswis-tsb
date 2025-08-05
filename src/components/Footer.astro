@@ -1,69 +1,66 @@
 ---
-// import sendangLogo from '../assets/sendangbandung.svg';
-// Pastikan file logo KKN ini ada di direktori /public/
 import { head, kontak } from '../data/konfigurasi.js';
 ---
 <footer class="w-full bg-gray-900 text-white">
-    <div class="container mx-auto px-4 md:px-8 py-16">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-            
-            <div class="lg:col-span-1 flex flex-col gap-4">
-                <div class="flex items-center gap-3">
+	<div class="container mx-auto px-4 md:px-8 py-16">
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+				
+			<div class="lg:col-span-1 flex flex-col gap-4">
+				<div class="flex items-center gap-3">
 					<img src="/sendangbandung.svg" alt="Logo Taman Sendang Bandung" class="h-12 w-12 bg-white p-1 rounded-full"/>
-                    <h2 class="font-bold text-xl">Taman Sendang Bandung</h2>
-                </div>
+					<h2 class="font-bold text-xl">Taman Sendang Bandung</h2>
+				</div>
 				<p class="text-gray-400">{head.description}</p>
-                <div class="mt-4">
-                     <p class="text-sm text-gray-400 mb-2">Dikembangkan oleh:</p>
-											<div class="flex gap-[8px]">
-											 <a href="https://www.instagram.com/peradaban.moyudan/" target="_blank" rel="noopener noreferrer">
-													<img src="/peradaban_moyudan.svg" alt="Logo KKN PPM UGM" class="h-14"/>
-											 </a>
-											 <a href="https://kkn.ugm.ac.id/" target="_blank" rel="noopener noreferrer">
-													<img src="/kkn.svg" alt="Logo KKN PPM UGM" class="h-14"/>
-											 </a>
-											 <a href="https://ugm.ac.id/" target="_blank" rel="noopener noreferrer">
-													<img src="/ugm.png" alt="Logo KKN PPM UGM" class="h-14"/>
-											 </a>
-										</div>
-                </div>
-            </div>
+				<div class="mt-4">
+					<p class="text-sm text-gray-400 mb-2">Dikembangkan oleh:</p>
+					<div class="flex gap-[8px]">
+						<a href="https://www.instagram.com/peradaban.moyudan/" target="_blank" rel="noopener noreferrer">
+							<img src="/peradaban_moyudan.svg" alt="Logo KKN PPM UGM" class="h-14"/>
+						</a>
+						<a href="https://kkn.ugm.ac.id/" target="_blank" rel="noopener noreferrer">
+							<img src="/kkn.svg" alt="Logo KKN PPM UGM" class="h-14"/>
+						</a>
+						<a href="https://ugm.ac.id/" target="_blank" rel="noopener noreferrer">
+							<img src="/ugm.png" alt="Logo KKN PPM UGM" class="h-14"/>
+						</a>
+					</div>
+				</div>
+			</div>
 
-            {/* Kolom Tautan Cepat */}
-            <div class="lg:col-span-1">
-                <h3 class="font-semibold text-lg mb-4">Tautan Cepat</h3>
-                <ul class="flex flex-col gap-3">
-                    <li><a href="/#wisata" class="text-gray-300 hover:text-primary transition-colors">Potensi Wisata</a></li>
-                    <li><a href="/#sejarah" class="text-gray-300 hover:text-primary transition-colors">Sejarah</a></li>
-                    <li><a href="/#paket" class="text-gray-300 hover:text-primary transition-colors">Paket Wisata</a></li>
-                    <li><a href="/#artikel" class="text-gray-300 hover:text-primary transition-colors">Artikel</a></li>
-                </ul>
-            </div>
+			{/* Kolom Tautan Cepat */}
+			<div class="lg:col-span-1">
+				<h3 class="font-semibold text-lg mb-4">Tautan Cepat</h3>
+				<ul class="flex flex-col gap-3">
+					<li><a href="/#wisata" class="text-gray-300 hover:text-primary transition-colors">Potensi Wisata</a></li>
+					<li><a href="/#sejarah" class="text-gray-300 hover:text-primary transition-colors">Sejarah</a></li>
+					<li><a href="/#paket" class="text-gray-300 hover:text-primary transition-colors">Paket Wisata</a></li>
+					<li><a href="/#artikel" class="text-gray-300 hover:text-primary transition-colors">Artikel</a></li>
+				</ul>
+			</div>
 
-            {/* Kolom Kontak */}
-            <div class="lg:col-span-1">
-                <h3 class="font-semibold text-lg mb-4">Kontak Kami</h3>
-                 <ul class="flex flex-col gap-3">
-								{kontak.contact.map((item) => 
+			{/* Kolom Kontak */}
+			<div class="lg:col-span-1">
+				<h3 class="font-semibold text-lg mb-4">Kontak Kami</h3>
+				 <ul class="flex flex-col gap-3">
+					{kontak.contact.map((item) => 
 					<li><span class="font-semibold">{item.name}:</span> <a href={item.link} class="text-gray-300 hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">{item.phone}</a></li>
-								)}
+					)}
 					<li><span class="font-semibold">Email:</span> <a href=`mailto:${kontak.email}` class="text-gray-300 hover:text-primary transition-colors">{kontak.email}</a></li>
-                </ul>
-            </div>
+				</ul>
+			</div>
 
-            {/* Kolom Media Sosial */}
-            <div class="lg:col-span-1">
-                <h3 class="font-semibold text-lg mb-4">Ikuti Kami</h3>
+			{/* Kolom Media Sosial */}
+			<div class="lg:col-span-1">
+				<h3 class="font-semibold text-lg mb-4">Ikuti Kami</h3>
 				<a href={kontak.instagram.link} target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-gray-300 hover:text-primary transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
 					<span>{kontak.instagram.username}</span>
-                </a>
-            </div>
-
-        </div>
-        <div class="text-center text-gray-500 text-sm mt-12 border-t border-gray-700 pt-8">
-            © {new Date().getFullYear()} Desa Wisata Taman Sendang Bandung by KKN-PPM UGM 2025
-        </div>
-    </div>
+				</a>
+			</div>
+		</div>
+		<div class="text-center text-gray-500 text-sm mt-12 border-t border-gray-700 pt-8">
+			© {new Date().getFullYear()} Desa Wisata Taman Sendang Bandung by KKN-PPM UGM 2025
+		</div>
+	</div>
 </footer>
 

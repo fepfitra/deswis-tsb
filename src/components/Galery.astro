@@ -5,43 +5,43 @@ import { galeri } from '../data/konfigurasi.js';
 const images = import.meta.glob('../data/galeri/*.{jpeg,jpg,png,webp}', { eager: true });
 
 const galleryImages = Object.entries(images).map(([path, module]) => {
-    const filename = path.split('/').pop().split('.')[0];
-    const altText = `Foto galeri ${filename.replace(/[-_]/g, ' ')}`;
-    
-    return {
-        src: module.default.src,
-        alt: altText,
-    };
+	const filename = path.split('/').pop().split('.')[0];
+	const altText = `Foto galeri ${filename.replace(/[-_]/g, ' ')}`;
+	
+	return {
+		src: module.default.src,
+		alt: altText,
+	};
 });
 ---
 <Section id="galeri">
-    <div class="flex flex-col w-full text-center items-center">
-		<h2 class="text-3xl md:text-4xl font-bold">{galeri.title}</h2>
-        <p class="mt-4 max-w-2xl text-lg text-gray-600">
-					{galeri.subtitle}
-        </p>
-        
-        <div class="mt-12 w-full overflow-x-auto pb-4 simple-scrollbar">
-            <div class="flex gap-6">
-                {galleryImages.map((image) => (
-                    <div class="w-80 md:w-96 flex-shrink-0">
-                        <div class="group relative overflow-hidden rounded-2xl shadow-lg transition-all duration-300 ease-in-out cursor-pointer">
-                            <img 
-                                src={image.src} 
-                                alt={image.alt} 
-                                class="w-full h-96 object-cover scale-100 group-hover:scale-110 transition-transform duration-500" 
-                                loading="lazy"
-                                onerror="this.onerror=null;this.src='https://placehold.co/384x384/f87171/ffffff?text=Image+Error';"
-                            />
-                            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4">
-                                <p class="text-white text-center text-sm md:text-base">{image.alt}</p>
-                            </div>
-                        </div>
-                    </div>
-                ))}
-            </div>
-        </div>
-    </div>
+	<div class="flex flex-col w-full text-center items-center">
+	<h2 class="text-3xl md:text-4xl font-bold">{galeri.title}</h2>
+		<p class="mt-4 max-w-2xl text-lg text-gray-600">
+			{galeri.subtitle}
+		</p>
+		
+		<div class="mt-12 w-full overflow-x-auto pb-4 simple-scrollbar">
+			<div class="flex gap-6">
+				{galleryImages.map((image) => (
+					<div class="w-80 md:w-96 flex-shrink-0">
+						<div class="group relative overflow-hidden rounded-2xl shadow-lg transition-all duration-300 ease-in-out cursor-pointer">
+							<img 
+								src={image.src} 
+								alt={image.alt} 
+								class="w-full h-96 object-cover scale-100 group-hover:scale-110 transition-transform duration-500" 
+								loading="lazy"
+								onerror="this.onerror=null;this.src='https://placehold.co/384x384/f87171/ffffff?text=Image+Error';"
+							/>
+							<div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4">
+								<p class="text-white text-center text-sm md:text-base">{image.alt}</p>
+							</div>
+						</div>
+					</div>
+				))}
+			</div>
+		</div>
+	</div>
 </Section>
 
 <style>

@@ -7,63 +7,63 @@ import { artikel } from '../data/konfigurasi.js';
 const rawPosts = Object.values(import.meta.glob('../data/articles/*.md', { eager: true }));
 
 const allPosts = rawPosts.map((post) => {
-    const {file, frontmatter} = post;
-    const articleSlug = frontmatter.slug || file.split('/').pop().replace('.md', '');
-    return {
-        title: frontmatter.title,
-        description: frontmatter.description,
-        link: `/articles/${articleSlug}`,
-        thumbnail: frontmatter.thumbnail || hero.src,
-        date: frontmatter.date,
-        author: frontmatter.author || 'Admin',
-				draft: frontmatter.draft || false,
-    }
+	const {file, frontmatter} = post;
+	const articleSlug = frontmatter.slug || file.split('/').pop().replace('.md', '');
+	return {
+		title: frontmatter.title,
+		description: frontmatter.description,
+		link: `/articles/${articleSlug}`,
+		thumbnail: frontmatter.thumbnail || hero.src,
+		date: frontmatter.date,
+		author: frontmatter.author || 'Admin',
+		draft: frontmatter.draft || false,
+	}
 });
 
 const filteredPosts = allPosts.filter(post => {
-		return !post.draft;
+	return !post.draft;
 });
 const sortedPosts = filteredPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
 ---
 <Section id="artikel" className="bg-white">
-    <div class="flex flex-col items-center w-full text-center">
-		<h2 class="text-3xl md:text-4xl font-bold">{artikel.title}</h2>
-        <p class="mt-4 max-w-2xl text-lg text-gray-600">
+	<div class="flex flex-col items-center w-full text-center">
+	<h2 class="text-3xl md:text-4xl font-bold">{artikel.title}</h2>
+		<p class="mt-4 max-w-2xl text-lg text-gray-600">
 			{artikel.subtitle}
-        </p>
-        
-        <div class="w-full mt-12 overflow-x-auto pb-4 simple-scrollbar">
-            <div class="flex gap-6 mx-[24px]">
-                {sortedPosts.slice(0, 10).map((item) => (
-                    <div class="w-80 md:w-96 flex-shrink-0 h-full">
-                        <ObjectItem {...item} />
-                    </div>
-                ))}
-            </div>
-        </div>
+		</p>
+		
+		<div class="w-full mt-12 overflow-x-auto pb-4 simple-scrollbar">
+			<div class="flex gap-6 mx-[24px]">
+				{sortedPosts.slice(0, 10).map((item) => (
+					<div class="w-80 md:w-96 flex-shrink-0 h-full">
+						<ObjectItem {...item} />
+					</div>
+				))}
+			</div>
+		</div>
 
-        <div class="mt-8">
-            <a href="/articles" class="btn bg-primary">
-                Lihat Semua Artikel
-            </a>
-        </div>
-    </div>
+		<div class="mt-8">
+			<a href="/articles" class="btn bg-primary">
+				Lihat Semua Artikel
+			</a>
+		</div>
+	</div>
 </Section>
 
 <style>
 .simple-scrollbar::-webkit-scrollbar {
-    height: 8px;
+	height: 8px;
 }
 .simple-scrollbar::-webkit-scrollbar-track {
-    background: #e5e7eb; /* bg-gray-200 */
-    border-radius: 10px;
+	background: #e5e7eb; /* bg-gray-200 */
+	border-radius: 10px;
 }
 .simple-scrollbar::-webkit-scrollbar-thumb {
-    background: #9ca3af; /* bg-gray-400 */
-    border-radius: 10px;
+	background: #9ca3af; /* bg-gray-400 */
+	border-radius: 10px;
 }
 .simple-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: #6b7280; /* bg-gray-500 */
+	background: #6b7280; /* bg-gray-500 */
 }
 </style>
 
