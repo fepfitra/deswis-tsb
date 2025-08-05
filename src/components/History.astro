@@ -1,6 +1,5 @@
 ---
 import Section from './Section.astro';
-// Using one of the images you provided that shows the traditional Joglo.
 import heroVideo from '/hero0001-0922-final.mp4';
 import { history } from '../data/konfigurasi.js';
 
@@ -9,7 +8,6 @@ import { history } from '../data/konfigurasi.js';
     <div class="flex md:flex-row flex-col gap-8 md:gap-12 items-center">
 		<h2 class="text-3xl md:text-4xl md:hidden font-bold">{history.title}</h2>
         
-        <!-- Image Column -->
         <div class="w-full md:w-1/2">
 					<video
 							autoplay
@@ -24,7 +22,6 @@ import { history } from '../data/konfigurasi.js';
 
         </div>
 
-        <!-- Text Content Column -->
         <div class="w-full md:w-1/2 flex flex-col gap-4">
             <h2 class="text-3xl md:text-4xl font-bold hidden md:inline">Kisah Desa Kami</h2>
 							{history.description.map((paragraph, index) => (
@@ -33,7 +30,6 @@ import { history } from '../data/konfigurasi.js';
 								</p>
 							))}
             
-            <!-- Statistics Section -->
             <div class="grid grid-cols-3 gap-4 text-center pt-6">
 								{history.items.map((item) => (
 				<div class="bg-primary/10 p-4 rounded-xl">

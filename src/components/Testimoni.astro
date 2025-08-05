@@ -9,11 +9,9 @@ import { testimoni } from '../data/konfigurasi.js';
 					{testimoni.subtitle}
         </p>
         
-        {/* Layout grid yang rapi untuk menampilkan testimoni */}
         <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
             {testimoni.items.map((testimony) => (
                 <div class="card p-8 flex flex-col text-left !shadow-md h-full">
-                    {/* Menampilkan bintang rating secara dinamis */}
                     <div class="text-yellow-400 text-2xl mb-4 flex gap-1">
                         {Array(testimony.rating).fill('★').map(star => <span>{star}</span>)}
                         {Array(5 - testimony.rating).fill('☆').map(star => <span class="text-gray-300">{star}</span>)}

@@ -2,13 +2,9 @@
 import Section from './Section.astro';
 import { galeri } from '../data/konfigurasi.js';
 
-// Secara dinamis mengimpor semua gambar dari direktori /src/data/galleri/
-// Ini akan mengambil file .jpeg, .jpg, .png, dan .webp
 const images = import.meta.glob('../data/galeri/*.{jpeg,jpg,png,webp}', { eager: true });
 
-// Membuat array galleryImages dari gambar yang diimpor
 const galleryImages = Object.entries(images).map(([path, module]) => {
-    // Membuat teks alt deskriptif dari nama file
     const filename = path.split('/').pop().split('.')[0];
     const altText = `Foto galeri ${filename.replace(/[-_]/g, ' ')}`;
     
@@ -49,7 +45,6 @@ const galleryImages = Object.entries(images).map(([path, module]) => {
 </Section>
 
 <style>
-/* Gaya scrollbar yang bersih dan sederhana */
 .simple-scrollbar::-webkit-scrollbar {
     height: 8px;
 }

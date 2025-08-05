@@ -1,11 +1,10 @@
 ---
 import Section from './Section.astro';
-// Asumsi data email sekarang tersedia di dalam objek 'kontak'
 import { kontak } from '../data/konfigurasi.js';
 ---
 <Section id="maps">
     <div class="flex flex-col items-center w-full text-center">
-        <h2 class="text-3xl md:text-4xl">{kontak.title}</h2>
+        <h2 class="text-3xl md:text-4xl font-bold">{kontak.title}</h2>
         <p class="mt-4 max-w-2xl text-lg text-gray-600">
             {kontak.subtitle}
         </p>

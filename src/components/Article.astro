@@ -12,14 +12,18 @@ const allPosts = rawPosts.map((post) => {
     return {
         title: frontmatter.title,
         description: frontmatter.description,
-        link: `/articles/${articleSlug}`, // Corrected path
+        link: `/articles/${articleSlug}`,
         thumbnail: frontmatter.thumbnail || hero.src,
         date: frontmatter.date,
         author: frontmatter.author || 'Admin',
+				draft: frontmatter.draft || false,
     }
 });
 
-const sortedPosts = allPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
+const filteredPosts = allPosts.filter(post => {
+		return !post.draft;
+});
+const sortedPosts = filteredPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
 ---
 <Section id="artikel" className="bg-white">
     <div class="flex flex-col items-center w-full text-center">
@@ -47,7 +51,6 @@ const sortedPosts = allPosts.sort((a, b) => new Date(b.date) - new Date(a.date))
 </Section>
 
 <style>
-/* Gaya scrollbar yang bersih dan sederhana */
 .simple-scrollbar::-webkit-scrollbar {
     height: 8px;
 }
