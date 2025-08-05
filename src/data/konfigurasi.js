@@ -85,4 +85,28 @@ const paket = {
 	]
 }
 
-export { head, hero, potensi, bot, history, paket }
+const kontak = {
+	title: "Kunjungi Kami",
+	subtitle: "Kami siap menyambut Anda. Temukan lokasi kami di peta atau hubungi kami langsung untuk informasi lebih lanjut.",
+	maps: "https://www.openstreetmap.org/export/embed.html?bbox=110.23723483085634%2C-7.77580888537943%2C110.24856448173524%2C-7.766464848777949&amp;layer=mapnik&amp;marker=-7.771131577922186%2C110.24289965629578",
+	gmaps: "https://maps.app.goo.gl/WDFPx3M3sJVg47UR9",
+	address: "Karang, Sumberagung, Kec. Moyudan, Kabupaten Sleman, DIY",
+	contact: [
+		{
+			name: "Nuna",
+			phone: "+62 811-8004-488",
+			link: "https://wa.me/628118004488",
+		},
+		{
+			name: "Agung",
+			phone: "+62 812-1531-9456",
+			link: "https://wa.me/6281215319456",
+		},
+	],
+	instagram: {
+		username: "@tamansendangbandung",
+		link: "https://www.instagram.com/tamansendangbandung/"
+	}
+}
+
+export { head, hero, potensi, bot, history, paket, kontak }
