@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css'
 import Navigation from '../components/Navigation.astro'
+import { head } from '../data/konfigurasi.js'
 
 interface Props {
     title?: string;
@@ -8,8 +9,8 @@ interface Props {
 }
 
 const { 
-    title = "Desa Wisata Taman Sendang Bandung", 
-    description = "Temukan ketenangan dan keindahan alam asli di Desa Wisata Taman Sendang Bandung, Sleman, Yogyakarta." 
+	title = head.title || "Desa Wisata Taman Sendang Bandung",
+	description = head.description || "Temukan ketenangan dan keindahan alam asli di Desa Wisata Taman Sendang Bandung, Sleman, Yogyakarta.",
 } = Astro.props;
 ---
 <!doctype html>
