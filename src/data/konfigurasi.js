@@ -3,4 +3,9 @@ const head = {
 	description: "Temukan ketenangan dan keindahan alam asli di Desa Wisata Taman Sendang Bandung, Sleman, Yogyakarta."
 }
 
-export { head }
+const hero = {
+	title: "Desa Wisata Taman Sendang Bandung",
+	subtitle: "Temukan ketenangan dan keindahan alam asli di Desa Wisata Taman Sendang Bandung, Sleman, Yogyakarta"
+}
+
+export { head, hero, potensi }
