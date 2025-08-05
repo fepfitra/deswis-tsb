@@ -1,8 +1,8 @@
 ---
 title: "Menyelami Pesona Alam dan Budaya Desa Wisata Taman Sendang Bandung"
-author: "Lily was a Little Girl"
+author: "Lily KKN 2025"
 description: "Istirahat bukanlah kemalasan. Sesekali berbaring di rerumputan di bawah pepohonan pada suatu ..."
-thumbnail: "/content/boro.jpg"
+thumbnail: "/content/joglo.jpg"
 date: 2025-08-02
 ---
 > Rest is not idleness, and to lie sometimes on the grass under trees on a summer's day,
