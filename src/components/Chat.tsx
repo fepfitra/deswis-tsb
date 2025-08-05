@@ -1,9 +1,10 @@
 import { h } from 'preact';
 import { useState, useRef, useEffect } from 'preact/hooks';
+import { bot } from '../data/konfigurasi.js';
 
 export function Chat() {
 	const [messages, setMessages] = useState([
-		{ id: 1, text: 'Halo! Ada yang bisa saya bantu seputar Desa Wisata Taman Sendang Bandung?', sender: 'bot' },
+		{ id: 1, text: bot.question, sender: 'bot' },
 	]);
 	const [inputValue, setInputValue] = useState('');
 	const [isLoading, setIsLoading] = useState(false);
@@ -53,8 +54,8 @@ export function Chat() {
 		<section id="chat-bot" class="w-full container mx-auto px-4 md:px-8 py-16 md:py-24">
 			<div class="flex flex-col bg-white rounded-2xl shadow-2xl max-w-3xl mx-auto overflow-hidden">
 				<div class="p-6 border-b text-center bg-gray-50">
-					<h2 class="text-2xl font-bold">Tanya Bot Sendang</h2>
-					<p class="text-gray-600 mt-1">Dapatkan jawaban cepat seputar desa wisata kami!</p>
+					<h2 class="text-2xl font-bold">{bot.title}</h2>
+					<p class="text-gray-600 mt-1">{bot.subtitle}</p>
 				</div>
 
 				<div ref={chatContainerRef} class="h-96 overflow-y-auto p-6 flex flex-col gap-4">

@@ -25,4 +25,10 @@ const potensi = {
 	]
 }
 
-export { head, hero, potensi }
+const bot = {
+	title: "Tanya Bot Sendang",
+	subtitle: "Dapatkan jawaban cepat seputar desa wisata kami!",
+	question: "Halo! Ada yang bisa saya bantu seputar Desa Wisata Taman Sendang Bandung?"
+}
+
+export { head, hero, potensi, bot }
