@@ -2,29 +2,7 @@
 import Section from './Section.astro';
 // Using one of the images you provided that shows the traditional Joglo.
 import heroVideo from '/hero0001-0922-final.mp4';
-
-
-const history = {
-	title: "Kisah Desa Kami",
-	description: [
-		"Taman Sendang Bandung merupakan desa wisata rintisan yang mulai dioperasikan secara optimal pada tahun 2022 dengan konsep pemberdayaan dari, oleh, dan untuk masyarakat.",
-		"Lokasi ini juga merupakan salah satu situs bersejarah yang berkaitan dengan perjuangan Pangeran Diponegoro. Kini, kami kembangkan menjadi kawasan wisata edukasi yang memadukan seni budaya, holtikultura, kuliner, dan penginapan. "
-	],
-	items: [
-		{
-			kuantity: "10+",
-			kind: "Spot Foto",
-		},
-		{
-			kuantity: "~1 Ha",
-			kind: "Area Wisata",
-		},
-		{
-			kuantity: "10+",
-			kind: "Jenis Aktivitas",
-		},
-	]
-}
+import { history } from '../data/konfigurasi.js';
 
 ---
 <Section id="sejarah">
