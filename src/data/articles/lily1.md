@@ -1,7 +1,7 @@
 ---
 title: "Menyelami Pesona Alam dan Budaya Desa Wisata Taman Sendang Bandung"
 author: "Lily KKN 2025"
-description: "Istirahat bukanlah kemalasan. Sesekali berbaring di rerumputan di bawah pepohonan pada suatu ..."
+description: "Istirahat bukanlah kemalasan. Sesekali berbaring di rerumputan di bawah pepohonan pada suatu hari di musim panas, mendengarkan gemercik air, atau memandangi awan yang berarak di langit, sama sekali bukanlah hal yang sia-sia."
 thumbnail: "/content/joglo.jpg"
 date: 2025-08-02
 ---
