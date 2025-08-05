@@ -31,4 +31,26 @@ const bot = {
 	question: "Halo! Ada yang bisa saya bantu seputar Desa Wisata Taman Sendang Bandung?"
 }
 
-export { head, hero, potensi, bot }
+const history = {
+	title: "Kisah Desa Kami",
+	description: [
+		"Taman Sendang Bandung merupakan desa wisata rintisan yang mulai dioperasikan secara optimal pada tahun 2022 dengan konsep pemberdayaan dari, oleh, dan untuk masyarakat.",
+		"Lokasi ini juga merupakan salah satu situs bersejarah yang berkaitan dengan perjuangan Pangeran Diponegoro. Kini, kami kembangkan menjadi kawasan wisata edukasi yang memadukan seni budaya, holtikultura, kuliner, dan penginapan. "
+	],
+	items: [
+		{
+			kuantity: "10+",
+			kind: "Spot Foto",
+		},
+		{
+			kuantity: "~1 Ha",
+			kind: "Area Wisata",
+		},
+		{
+			kuantity: "10+",
+			kind: "Jenis Aktivitas",
+		},
+	]
+}
+
+export { head, hero, potensi, bot, history }

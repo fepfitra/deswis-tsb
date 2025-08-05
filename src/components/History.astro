@@ -2,10 +2,34 @@
 import Section from './Section.astro';
 // Using one of the images you provided that shows the traditional Joglo.
 import heroVideo from '/hero0001-0922-final.mp4';
+
+
+const history = {
+	title: "Kisah Desa Kami",
+	description: [
+		"Taman Sendang Bandung merupakan desa wisata rintisan yang mulai dioperasikan secara optimal pada tahun 2022 dengan konsep pemberdayaan dari, oleh, dan untuk masyarakat.",
+		"Lokasi ini juga merupakan salah satu situs bersejarah yang berkaitan dengan perjuangan Pangeran Diponegoro. Kini, kami kembangkan menjadi kawasan wisata edukasi yang memadukan seni budaya, holtikultura, kuliner, dan penginapan. "
+	],
+	items: [
+		{
+			kuantity: "10+",
+			kind: "Spot Foto",
+		},
+		{
+			kuantity: "~1 Ha",
+			kind: "Area Wisata",
+		},
+		{
+			kuantity: "10+",
+			kind: "Jenis Aktivitas",
+		},
+	]
+}
+
 ---
 <Section id="sejarah">
     <div class="flex md:flex-row flex-col gap-8 md:gap-12 items-center">
-				<h2 class="text-3xl md:text-4xl md:hidden font-bold">Kisah Desa Kami</h2>
+		<h2 class="text-3xl md:text-4xl md:hidden font-bold">{history.title}</h2>
         
         <!-- Image Column -->
         <div class="w-full md:w-1/2">
@@ -25,27 +49,20 @@ import heroVideo from '/hero0001-0922-final.mp4';
         <!-- Text Content Column -->
         <div class="w-full md:w-1/2 flex flex-col gap-4">
             <h2 class="text-3xl md:text-4xl font-bold hidden md:inline">Kisah Desa Kami</h2>
-            <p class="text-lg text-gray-600">
-                <b>Taman Sendang Bandung</b> merupakan desa wisata rintisan yang mulai dioperasikan secara optimal pada tahun 2022 dengan konsep pemberdayaan dari, oleh, dan untuk masyarakat.
-            </p>
-            <p>
-                Lokasi ini juga merupakan salah satu situs bersejarah yang berkaitan dengan perjuangan Pangeran Diponegoro. Kini, kami kembangkan menjadi kawasan wisata edukasi yang memadukan seni budaya, holtikultura, kuliner, dan penginapan.
-            </p>
+							{history.description.map((paragraph, index) => (
+								<p class="text-lg text-gray-600" key={index}>
+									{paragraph}
+								</p>
+							))}
             
             <!-- Statistics Section -->
             <div class="grid grid-cols-3 gap-4 text-center pt-6">
-                <div class="bg-primary/10 p-4 rounded-xl">
-                    <h3 class="text-2xl font-bold text-primary">10+</h3>
-                    <p class="text-sm font-medium text-gray-700">Spot Foto</p>
-                </div>
-                <div class="bg-primary/10 p-4 rounded-xl">
-                    <h3 class="text-2xl font-bold text-primary">~1 Ha</h3>
-                    <p class="text-sm font-medium text-gray-700">Area Wisata</p>
-                </div>
-                <div class="bg-primary/10 p-4 rounded-xl">
-                    <h3 class="text-2xl font-bold text-primary">10+</h3>
-                    <p class="text-sm font-medium text-gray-700">Jenis Aktivitas</p>
-                </div>
+								{history.items.map((item) => (
+				<div class="bg-primary/10 p-4 rounded-xl">
+														<h3 class="text-2xl font-bold text-primary">{item.kuantity}</h3>
+				<p class="text-sm font-medium text-gray-700">{item.kind}</p>
+													</div>
+								))}
             </div>
         </div>
 
