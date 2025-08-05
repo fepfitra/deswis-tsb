@@ -1,19 +1,26 @@
 ---
 import Section from './Section.astro';
 
-const galleryImages = [
-    { src: "/content/boro.jpg", alt: "Suasana asri di Taman Sendang Bandung" },
-    { src: "/content/boro.jpg", alt: "Kegiatan outbound yang seru" },
-    { src: "/content/boro.jpg", alt: "Dekorasi pernikahan outdoor yang elegan" },
-    { src: "/content/boro.jpg", alt: "Area camping di malam hari" },
-    { src: "/content/boro.jpg", alt: "Anak-anak bermain di alam terbuka" },
-    { src: "/content/boro.jpg", alt: "Anak-anak bermain di alam terbuka" },
-    { src: "/content/boro.jpg", alt: "Anak-anak bermain di alam terbuka" },
-];
+// Secara dinamis mengimpor semua gambar dari direktori /src/data/galleri/
+// Ini akan mengambil file .jpeg, .jpg, .png, dan .webp
+const images = import.meta.glob('../data/galeri/*.{jpeg,jpg,png,webp}', { eager: true });
+console.log(images);
+
+// Membuat array galleryImages dari gambar yang diimpor
+const galleryImages = Object.entries(images).map(([path, module]) => {
+    // Membuat teks alt deskriptif dari nama file
+    const filename = path.split('/').pop().split('.')[0];
+    const altText = `Foto galeri ${filename.replace(/[-_]/g, ' ')}`;
+    
+    return {
+        src: module.default.src,
+        alt: altText,
+    };
+});
 ---
 <Section id="galeri">
     <div class="flex flex-col w-full text-center items-center">
-        <h2 class="text-3xl md:text-4xl font-bold">Galeri Foto</h2>
+        <h2 class="text-3xl md:text-4xl">Galeri Foto</h2>
         <p class="mt-4 max-w-2xl text-lg text-gray-600">
             Lihat momen-momen indah yang tertangkap di desa kami, dari pemandangan alam hingga keceriaan pengunjung.
         </p>
@@ -26,7 +33,7 @@ const galleryImages = [
                             <img 
                                 src={image.src} 
                                 alt={image.alt} 
-                                class="w-full object-cover scale-100 group-hover:scale-110 transition-transform duration-500" 
+                                class="w-full h-96 object-cover scale-100 group-hover:scale-110 transition-transform duration-500" 
                                 loading="lazy"
                                 onerror="this.onerror=null;this.src='https://placehold.co/384x384/f87171/ffffff?text=Image+Error';"
                             />
