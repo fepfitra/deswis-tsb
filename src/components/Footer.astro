@@ -1,6 +1,7 @@
 ---
 // import sendangLogo from '../assets/sendangbandung.svg';
 // Pastikan file logo KKN ini ada di direktori /public/
+import { head, kontak } from '../data/konfigurasi.js';
 ---
 <footer class="w-full bg-gray-900 text-white">
     <div class="container mx-auto px-4 md:px-8 py-16">
@@ -11,7 +12,7 @@
 					<img src="/sendangbandung.svg" alt="Logo Taman Sendang Bandung" class="h-12 w-12 bg-white p-1 rounded-full"/>
                     <h2 class="font-bold text-xl">Taman Sendang Bandung</h2>
                 </div>
-                <p class="text-gray-400">Desa wisata autentik dengan pemandangan memukau di Sleman, Yogyakarta.</p>
+				<p class="text-gray-400">{head.description}</p>
                 <div class="mt-4">
                      <p class="text-sm text-gray-400 mb-2">Dikembangkan oleh:</p>
 											<div class="flex gap-[8px]">
@@ -43,18 +44,19 @@
             <div class="lg:col-span-1">
                 <h3 class="font-semibold text-lg mb-4">Kontak Kami</h3>
                  <ul class="flex flex-col gap-3">
-                    <li><span class="font-semibold">Nuna:</span> <a href="https://wa.me/628118004488" class="text-gray-300 hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">+62 811-8004-488</a></li>
-                     <li><span class="font-semibold">Agung:</span> <a href="https://wa.me/6281215319456" class="text-gray-300 hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">+62 812-1531-9456</a></li>
-                    <li><span class="font-semibold">Email:</span> <a href="mailto:sendangbandung@gmail.com" class="text-gray-300 hover:text-primary transition-colors">sendangbandung@gmail.com</a></li>
+								{kontak.contact.map((item) => 
+					<li><span class="font-semibold">{item.name}:</span> <a href={item.link} class="text-gray-300 hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">{item.phone}</a></li>
+								)}
+					<li><span class="font-semibold">Email:</span> <a href=`mailto:${kontak.email}` class="text-gray-300 hover:text-primary transition-colors">{kontak.email}</a></li>
                 </ul>
             </div>
 
             {/* Kolom Media Sosial */}
             <div class="lg:col-span-1">
                 <h3 class="font-semibold text-lg mb-4">Ikuti Kami</h3>
-                <a href="https://instagram.com/tamansendangbandung" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-gray-300 hover:text-primary transition-colors">
+				<a href={kontak.instagram.link} target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-gray-300 hover:text-primary transition-colors">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-                    <span>@tamansendangbandung</span>
+					<span>{kontak.instagram.username}</span>
                 </a>
             </div>
 

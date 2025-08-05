@@ -106,7 +106,8 @@ const kontak = {
 	instagram: {
 		username: "@tamansendangbandung",
 		link: "https://www.instagram.com/tamansendangbandung/"
-	}
+	},
+	email: "sendangbandung@gmail.com"
 }
 
 
