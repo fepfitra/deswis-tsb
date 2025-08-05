@@ -1,5 +1,5 @@
 ---
-const { title, description, thumbnail, link, date } = Astro.props;
+const { title, description, thumbnail, link, date, author } = Astro.props;
 ---
 <a href={link} class="card h-full flex flex-col text-left group">
     <div class="overflow-hidden">
@@ -14,8 +14,10 @@ const { title, description, thumbnail, link, date } = Astro.props;
     <div class="p-6 flex flex-col gap-2 grow">
         <h3 class="font-bold text-xl !text-gray-800">{title}</h3>
         <p class="text-gray-600 grow line-clamp-3">{description}</p>
-        <div class="text-sm text-gray-500 mt-4 pt-4 border-t">
-            {new Date(date).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })}
+        
+        <div class="text-sm text-gray-500 mt-4 pt-4 border-t flex justify-between items-center">
+            <span>Oleh: <strong>{author}</strong></span>
+            <span>{new Date(date).toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric' })}</span>
         </div>
     </div>
 </a>
