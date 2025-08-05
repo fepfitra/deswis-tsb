@@ -120,4 +120,27 @@ const galeri = {
 	subtitle: "Lihat momen-momen indah yang tertangkap di desa kami, dari pemandangan alam hingga keceriaan pengunjung. "
 }
 
-export { head, hero, potensi, bot, history, paket, kontak, artikel, galeri }
+const testimoni = {
+	title: "Apa Kata Mereka",
+	subtitle: "Kami bangga dapat memberikan pengalaman terbaik. Inilah yang dikatakan para pengunjung kami.",
+	items: [
+		{
+			name: "Hetty Dwi Nurhayati",
+			comment: "Tempat yg cocok untuk gathering, camping, outbond dengan nuansa alam yang asri, sejuk dan alami. Top!",
+			rating: 5,
+		},
+		{
+			name: "Retnowati Dian Adiningsih, SP",
+			comment: "Tepat untuk kegiatan camp kapasitas maks 100. Fasilitas sound, makan, snack, air, listrik, keamanan, dapur lengkap. Semoga tahun depan bisa ngecamp lagi disini dengan fasilitas lebih baik lagi.",
+			rating: 5,
+		},
+		{
+			name: "AW",
+			comment: "Suasana pedesaan dengan suara deras air sungai sangat menenangkan untuk dikunjungi, terlebih waktu pagi hari.",
+			rating: 5,
+		},
+	]
+
+}
+
+export { head, hero, potensi, bot, history, paket, kontak, artikel, galeri, testimoni }

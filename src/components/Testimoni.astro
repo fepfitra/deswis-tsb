@@ -1,35 +1,17 @@
 ---
 import Section from './Section.astro';
-
-// Daftar testimoni dari pengunjung.
-const testimonies = [
-    { 
-        name: "Hetty Dwi Nurhayati", 
-        rating: 5, 
-        comment: "Tempat yg cocok untuk gathering, camping, outbond dengan nuansa alam yang asri, sejuk dan alami. Top!", 
-    },
-    { 
-        name: "Retnowati Dian Adiningsih, SP", 
-        rating: 5, 
-        comment: "Tepat untuk kegiatan camp kapasitas maks 100. Fasilitas sound, makan, snack, air, listrik, keamanan, dapur lengkap. Semoga tahun depan bisa ngecamp lagi disini dengan fasilitas lebih baik lagi.", 
-    },
-    { 
-        name: "AW", 
-        rating: 5, 
-        comment: "Suasana pedesaan dengan suara deras air sungai sangat menenangkan untuk dikunjungi, terlebih waktu pagi hari.", 
-    },
-];
+import { testimoni } from '../data/konfigurasi.js';
 ---
 <Section id="testimoni" className="bg-gray-50">
     <div class="flex flex-col w-full text-center items-center">
-        <h2 class="text-3xl md:text-4xl font-bold">Apa Kata Mereka</h2>
+		<h2 class="text-3xl md:text-4xl font-bold">{testimoni.title}</h2>
         <p class="mt-4 max-w-2xl text-lg text-gray-600">
-            Kami bangga dapat memberikan pengalaman terbaik. Inilah yang dikatakan para pengunjung kami.
+					{testimoni.subtitle}
         </p>
         
         {/* Layout grid yang rapi untuk menampilkan testimoni */}
         <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
-            {testimonies.map((testimony) => (
+            {testimoni.items.map((testimony) => (
                 <div class="card p-8 flex flex-col text-left !shadow-md h-full">
                     {/* Menampilkan bintang rating secara dinamis */}
                     <div class="text-yellow-400 text-2xl mb-4 flex gap-1">
