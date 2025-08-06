@@ -23,7 +23,7 @@ const potensi = {
 		{ title: "Line Dance", description: "Ikuti keseruan Line Dance bersama komunitas lokal yang enerjik.", icon: "💃" },
 		{ title: "Empu Keris", description: "Pelajari seni pembuatan keris dari Ki Empu Sungkowo Harumbrodjo.", icon: "🗡️" },
 		{ title: "Pasar Tradisional", description: "Rasakan suasana pasar tradisional dengan aneka produk lokal.", icon: "🛍️" },
-		{ title: "Keroncong Modern", description: "Rasakan suasana pasar tradisional dengan aneka produk lokal.", icon: "🎶" },
+		{ title: "Keroncong Modern", description: "Lahir dari semangat menjaga warisan budaya keroncong dengan nyawa yang lebih muda.", icon: "🎶" },
 		
 	]
 }
