@@ -1,8 +1,8 @@
 ---
-repo: fepfitra/deswis-tsb
-media_path: /src/data/articles
-website_url: https://sendangbandung.com
 collections: []
+media_path: /src/data/articles
+repo: sendangbandung/deswis-tsb
+website_url: https://sendangbandung.com
 ---
 # GitCMS Configuration File
 > [!WARNING]
