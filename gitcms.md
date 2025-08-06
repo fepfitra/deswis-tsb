@@ -1,6 +1,29 @@
 ---
-collections: []
-media_path: /src/data/articles
+collections:
+  - name: articles
+    git_path: /src/data/articles
+    filename_pattern: title
+    file_extension: .md
+    metadata_schema:
+      - name: title
+        type: title
+        required: true
+      - name: author
+        type: singleline
+        required: true
+      - name: description
+        type: singleline
+        required: true
+      - name: thumbnail
+        type: file
+        required: true
+      - name: date
+        type: datetime
+        required: true
+      - name: draft
+        type: boolean
+        required: false
+media_path: /public
 repo: sendangbandung/deswis-tsb
 website_url: https://sendangbandung.com
 ---
