@@ -4,6 +4,7 @@ author: "John Boe"
 description: "This is a test document."
 thumbnail: "/content/boro.jpg"
 date: 2023-10-02
+draft: true
 ---
 # test
 # test222
